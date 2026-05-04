@@ -10,19 +10,19 @@ export type AnalyticalPerformance = {
 };
 
 export type Analysis = {
-  asset: AssetType;
-  pair: string;
+  asset?: AssetType;
+  pair?: string;
   tf?: string;
-  bias: "bullish" | "bearish" | "neutral";
-  reactionmagnitude: string;
-  validationstatus: string;
-  observedoutcome: string;
-  initialforecast: string;
-  result: AnalysisResult;
-  beforeImage: string;
-  afterImage: string;
-  description: string;
-  date: string;
+  bias?: "bullish" | "bearish" | "neutral";
+  reactionmagnitude?: string;
+  validationstatus?: string;
+  observedoutcome?: string;
+  initialforecast?: string;
+  result?: AnalysisResult;
+  beforeImage?: string;
+  afterImage?: string;
+  description?: string;
+  date?: string;
 };
 
 export type MarketAnalysis = {

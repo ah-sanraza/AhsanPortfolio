@@ -195,39 +195,8 @@ const Hero = () => (
       </div>
       
       <div className="flex flex-col sm:flex-row items-center justify-center gap-10">
-                {/* <a onClick={(e) => {
-    e.preventDefault();
-    document.getElementById("analysis")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }} href="#analysis" className="group relative px-12 py-5 bg-panel border border-white/10 hover:border-accent/40 transition-all duration-500 overflow-hidden"
-       >
-           <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
-          <div className="flex items-center gap-4 relative z-10">
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">Current Market Thesis</span>
-            <ArrowRight size={14} className="text-accent group-hover:translate-x-2 transition-transform duration-500" />
-          </div>
-        </a> */}
-        
-        {/* <div className="flex items-center gap-8">
-          <div className="flex flex-col items-start gap-1">
-            <span className="text-[8px] font-mono text-text-s uppercase tracking-widest">Active Edge</span>
-            <span className="text-xs font-bold text-emerald-400 font-mono">+3.4R Avg</span>
-          </div>
-          <div className="w-px h-8 bg-white/5" />
-          <div className="flex flex-col items-start gap-1">
-            <span className="text-[8px] font-mono text-text-s uppercase tracking-widest">Data Integrity</span>
-            <span className="text-xs font-bold text-data-blue font-mono">Verified.p</span>
-          </div>
-        </div> */}
       </div>
     </motion.div>
-
-    {/* Metadata Floating Labels */}
-    {/* <div className="absolute bottom-10 left-10 hidden xl:flex flex-col gap-3 font-mono opacity-20 pointer-events-none">
-      <div className="text-[8px] uppercase tracking-widest">PRM: 0x82.51.A</div>
-      <div className="text-[8px] uppercase tracking-widest">SID: A_RAZA_TERMINAL</div>
-    </div> */}
 
     <div className="absolute bottom-10 right-1/2 translate-x-1/2 flex flex-col items-center gap-4 text-text-s/30 transform group cursor-pointer hover:text-accent transition-colors">
        <div className="w-px h-12 bg-white/10 relative overflow-hidden">
@@ -337,10 +306,6 @@ const SpecializationBar = () => (
 );
 const MarketGrid = () => (
   <section id="analysis" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/25 relative">
-    {/* <div className="absolute top-0 right-0 p-10 font-mono text-[8px] opacity-10 uppercase tracking-[0.5em] pointer-events-none">
-      SCAN_ID: 0x92.INTEL.A
-    </div> */}
-    
     <div className="flex flex-col md:flex-row items-baseline justify-between mb-12 gap-10">
       <div>
         <h2 className="text-5xl font-serif font-bold italic mb-6 tracking-tight text-white">Market Research</h2>
@@ -349,17 +314,8 @@ const MarketGrid = () => (
             <div className="w-2 h-2 bg-accent" />
             <span className="text-text-s text-[12px] uppercase tracking-[0.1em] text-white">Structured Observation. Defined Bias. Measured Outcome</span>
           </div>
-          {/* <div className="h-px w-12 bg-white/10" />
-          <div className="text-[10px] font-mono text-data-blue/60 uppercase animate-pulse">Live Feed / Feed_01</div> */}
         </div>
       </div>
-      {/* <div className="flex gap-1 p-1 bg-white/[0.01] border border-white/[0.05] rounded-sm">
-        {['All', 'Crypto', 'Forex', 'Commodities'].map(cat => (
-          <button key={cat} className="px-5 py-2 text-[12px] uppercase tracking-[0.25em] font-black  text-white text-text-s hover:text-black hover:bg-white/5 transition-all">
-            {cat}
-          </button>
-        ))}
-      </div> */}
     </div>
 
     <div className="grid grid-cols-1 gap-10">
@@ -440,7 +396,14 @@ const MarketGrid = () => (
                   <div className="text-2xl text-white leading-[1.2] font-bold tracking-tight">{item.title}</div>
                 </div>
                  <div className="grid grid-cols-1 gap-2">
-                  <div className="text-1xl text-white leading-[1.2] tracking-tight">{item.description}</div>
+                  <div className="text-1xl text-white leading-[1.2] tracking-tight">{item.description
+  ? item.description.split('\n').map((line, i) => (
+      <span key={i}>
+        {line}
+        <br />
+      </span>
+    ))
+  : null}</div>
              </div>
 
              <button className="flex items-center justify-between group/link w-full text-left pt-2">
@@ -527,7 +490,7 @@ const ExecutionLog = () => {
                   <span className="px-3 py-1 bg-black/60 border border-white/5 text-[10px] font-mono text-white/80 uppercase tracking-widest">Initial Thesis [Market Structure]</span>
                 </div>
                 <a href="https://www.tradingview.com/x/XtbUPDNV/" target="_blank" rel="noopener noreferrer">
-                  <img src={Analysis.beforeImage} alt={`Entry Logic`} className="object-cover w-full h-full transition-all duration-1000" referrerPolicy="no-referrer"/>
+                  <img src={Analysis.beforeImage} alt={`Market Structure`} className="object-cover w-full h-full transition-all duration-1000" referrerPolicy="no-referrer"/>
                 </a>
               </div>
               <div className="relative overflow-hidden aspect-video xl:aspect-auto border-2 border-black">
@@ -543,7 +506,7 @@ const ExecutionLog = () => {
                   <span className="px-3 py-1 bg-black/60 border border-white/5 text-[10px] font-mono text-white/80 uppercase tracking-widest">Outcome  [market response]</span>
                 </div>
                 <a href="https://www.tradingview.com/x/hYJTeBhy/" target="_blank" rel="noopener noreferrer">
-                <img src={Analysis.afterImage} alt={`Mkt Delivery`} className="object-cover w-full h-full transition-all duration-1000" referrerPolicy="no-referrer" />
+                <img src={Analysis.afterImage} alt={`Market Response`} className="object-cover w-full h-full transition-all duration-1000" referrerPolicy="no-referrer" />
               </a>
               </div>
             </div>
@@ -593,17 +556,6 @@ const ExecutionLog = () => {
                   <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.description}</div>
                  
              </div>
-              
-              {/* <div className="p-8 border-l border-accent/40 bg-white/[0.05] relative overflow-hidden group/audit">
-                
-                <div className="text-[8px] uppercase tracking-[0.3em] font-black text-accent mb-4 flex items-center gap-2">
-                   <Lock size={10} /> Research Logic
-                </div>
-                <p className="text-sm italic font-serif leading-relaxed text-text-p tracking-wide">
-                  "{Analysis.reasoning}"
-                </p>
-           
-              </div> */}
             </div>
           </motion.div>
         ))}
@@ -662,92 +614,6 @@ const InsightsSection = () => (
   </section>
 );
 
-// const VFSIntelligence = () => (
-//   <section className="py-40 px-6 max-w-7xl mx-auto border-t border-white/25 flex flex-col lg:flex-row gap-32 items-center relative overflow-hidden">
-   
-
-//     <div className="flex-1 z-10">
-//       <div className="flex items-center gap-4 mb-10">
-//         <div className="h-px w-8 bg-accent" />
-//         <h2 className="text-[20px] font-black uppercase tracking-[0.3em] text-accent">Something Special</h2>
-//       </div>
-//       <h3 className="text-6xl md:text-7xl font-serif font-bold mb-8 text-white tracking-tighter">VFS Intelligence</h3>
-//         <p className="text-white text-lg md:text-xl uppercase mb-8">
-//             "Markets are not random They are Structured."
-//         </p>
-//       <div className="space-y-5 bg-panel/40 backdrop-blur-xl p-12 border border-white/10 relative shadow-2xl overflow-hidden group">
-//         <p className="text-text-s text-xl font-serif italic max-w-xl leading-relaxed opacity-90 ">
-//            <span className="text-4xl text-white font-bold mr-1"> VFS </span>
-//          Intelligence is a research framework analyzing market behavior beyond price.
-//         It studies structure, participation, and macro context to separate intent-driven movement from noise.
-//         </p>
-        
-//        <ul className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-3">
-//   {socialLinks.map((item, i) => {
-//     const Icon = item.icon;
-//     return (
-//       <li key={i}>
-//         <a 
-//           href={item.link} 
-//           {...(item.link.startsWith("http") && {
-//             target: "_blank",
-//             rel: "noopener noreferrer"
-//           })}
-//           className="flex flex-col items-center gap-3 text-white/50 hover:text-accent transition-all duration-500 group"
-//         >
-//           <div className="w-10 h-px bg-white/10 group-hover:bg-accent group-hover:w-14 transition-all duration-500" />
-          
-//           <Icon 
-//             size={20} 
-//             className="group-hover:scale-125 group-hover:-translate-y-1 transition-all duration-500" 
-//           />
-//         </a>
-//       </li>
-//     );
-//   })}
-// </ul>
-        
-//         <div className="pt-8 border-t border-white/[0.05] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-//           <div className="flex items-center gap-3">
-//             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-ping" />
-//             <span className="text-accent text-[9px] font-mono uppercase tracking-[0.4em] font-bold">
-//               Currently in development</span>
-//           </div>
-          
-//         </div>
-//       </div>
-//     </div>
-
-//     <div className="flex-1 relative flex justify-center items-center">
-//        {/* Secret System Visualization */}
-//        <div className="relative w-[450px] h-[450px] flex items-center justify-center">
-          
-          
-//           <div className="relative z-10 flex flex-col items-center">
-//             <span className="font-serif text-accent text-8xl font-bold tracking-tighter opacity-80 drop-shadow-[0_0_20px_rgba(0,0,0,0.4)]"><img src="vfs.png" alt="logo" /></span>
-//           </div>
-          
-//           Pulsing Data Points
-//           {[...Array(8)].map((_, i) => (
-//             <div 
-//               key={i} 
-//               className="absolute w-1 h-1 bg-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(199,167,106,1)]" 
-//               style={{
-//                 top: `${50 + 44 * Math.sin(i * (Math.PI / 4))}%`,
-//                 left: `${50 + 44 * Math.cos(i * (Math.PI / 4))}%`,
-//               }}
-//             />
-//           ))}
-          
-//           Moving particles inside rings
-//           <div className="absolute inset-0 animate-[spin_60s_linear_infinite]">
-//              <div className="absolute top-1/2 left-0 w-2 h-2 squared-full blur-[2px]" />
-//           </div>
-//        </div>
-//     </div>
-//   </section>
-// );
-
 const ResearchPhilosophy = () => (
   <section id="researchphilosophy" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/25 relative">
     <div className="grid lg:grid-cols-12 gap-24 items-end">
@@ -768,51 +634,8 @@ const ResearchPhilosophy = () => (
           <p className="text-text-s text-lg md:text-xl font-sans font-medium max-w-none leading-relaxed tracking-[-0.03em]">
             “The approach is centered on tracking how liquidity is positioned and how price interacts with it. Analysis is built around structure, displacement and inefficiencies where the market moves away from balance. No reliance is placed on indicators. The process is based on reading price behavior and confirming shifts in underlying flow.”
           </p>
-          
-           {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-12 pt-10 font-bold">
-             {[
-               { label: "Core Edge", value: "Price Action" },
-               { label: "Execution", value: "Mechanical" },
-               { label: "Parameter", value: "Risk Asymmetry" },
-               { label: "Dependency", value: "Zero Indicator" }
-             ].map((node, i) => (
-               <div key={i} className="group">
-                 <div className="text-[11px] uppercase font-black tracking-[0.3em] text-accent mb-4 group-hover:text-accent transition-colors">{node.label}</div>
-                 <div className="font-serif text-lg text-white border-l border-white/10 pl-4 group-hover:border-accent transition-all duration-500">{node.value}</div>
-               </div>
-             ))}
-          </div> */}
         </div>
       </div>
-      
-       {/* <div className="lg:col-span-4 self-stretch flex items-center justify-center">
-          <div className="terminal-panel p-12 w-full bg-panel/60 backdrop-blur-xl border-accent/20 relative group overflow-hidden">
-             <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.03] to-transparent pointer-events-none" />
-             
-             <div className="flex items-center gap-4 mb-12 relative z-10">
-               <div className="p-2 bg-accent/5">
-                 <BarChart3 size={20} className="text-accent/80" />
-               </div>
-               <span className="text-[10px] uppercase font-black tracking-[0.4em] text-white/80">Audit_Metrix_v2</span>
-             </div>
-             
-             <div className="space-y-10 relative z-10">
-               {[
-                 { label: "Target RR Avg", value: "1:3.4", color: "text-white" },
-                 { label: "Max System Drawdown", value: "-4.2%", color: "text-red-400" },
-                 { label: "Asymmetric Win Rate", value: "42.5%", color: "text-emerald-400" }
-               ].map((metric, i) => (
-                 <div key={i} className="flex justify-between items-end border-b border-white/[0.05] pb-6 group/item">
-                    <span className="text-text-s/40 text-[9px] uppercase font-black tracking-widest group-hover/item:text-text-s transition-colors">{metric.label}</span>
-                    <span className={`font-mono text-3xl font-bold tracking-tighter ${metric.color}`}>{metric.value}</span>
-                 </div>
-               ))}
-             </div>
-             <p className="mt-10 text-[8px] font-mono text-text-s/30 italic uppercase tracking-wider flex items-center gap-2">
-                <div className="w-1 h-1 bg-white/20 rounded-full" /> Verification: MT5_BACKHAUL_ACTIVE
-             </p>
-          </div>
-      </div>  */}
     </div>
   </section>
 );
@@ -924,15 +747,6 @@ const Contact = () => (
 
       <div className="mt-20 flex flex-col items-center gap-8">
         <div className="flex flex-col items-center gap-3">
-          {/* <div className="flex items-center gap-4 text-white/40">
-            <Globe size={18} className="animate-pulse" />
-            <span className="text-[9px] font-mono uppercase tracking-[0.6em]">Matrix Verified Terminals</span>
-          </div>
-          <div className="flex gap-12 text-[8px] font-black uppercase tracking-[0.4em] text-white/20">
-            <span className="hover:text-accent transition-colors cursor-crosshair">TradingView</span>
-            <span className="hover:text-accent transition-colors cursor-crosshair">MT5_Audit</span>
-            <span className="hover:text-accent transition-colors cursor-crosshair">Bloomberg_ID</span>
-          </div> */}
         </div>
         
         <div className="w-px h-34 bg-gradient-to-b from-accent to-white" />
