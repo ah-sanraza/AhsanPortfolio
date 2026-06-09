@@ -1,42 +1,43 @@
 import { Analysis, MarketAnalysis, Insight ,AnalyticalPerformance} from './types';
 export const ANALYTICAL_PERFORMANCE: AnalyticalPerformance = {
   publishedAnalysis:1,
-  validated: 0,
+  validated: 1,
   invalidated: 0,
-  validationAccuracy: 0, // percentage
+  validationAccuracy: "Not statiscally meaningful (early stage dataset)", // percentage
   averageReactionRange: 0, // percentage
 };
 export const MOCK_Analysis: Analysis[] = [
-  {
-    asset: "",
-    pair: "",
-    tf: "",
-    bias: "",
-    initialforecast: "",
-    observedoutcome: "",
-    validationstatus: "",
-    reactionmagnitude:"",
-    result: "",
-    beforeImage: "",
-    afterImage: "",
-    description: "Outcome Pending",
-    date: "",
-  },
   // {
-  //   asset: "stocks",
-  //   pair: "NVDA",
-  //   tf: "-D1",
-  //   bias: "bullish",
+  //   asset: "",
+  //   pair: "",
+  //   tf: "",
+  //   bias: "",
   //   initialforecast: "",
   //   observedoutcome: "",
   //   validationstatus: "",
   //   reactionmagnitude:"",
-  //   result: "Validated",
-  //   beforeImage: "https://www.tradingview.com/x/XtbUPDNV/",
-  //   afterImage: "https://www.tradingview.com/x/hYJTeBhy/",
-  //   description: "Post-earnings institutional sponsorship. Orderflow remains heavily bid at gap origin.",
-  //   date: "2024-02-10",
+  //   result: "",
+  //   beforeImage: "",
+  //   afterImage: "",
+  //   description: "Outcome Pending",
+  //   date: "",
   // },
+ {
+    asset: "crypto",
+    pair: "BTCUSD",
+    tf: "-1D",
+    bias: "bullish",
+    initialforecast: "Bearish Delivery: 84,000 to 81,000 → 60,000",
+    observedoutcome: "Market Delivery: 82,800 → 59,150",
+    validationstatus: "VALIDATED",
+    reactionmagnitude:"~25% Bearish Move",
+    result: "VALIDATED",
+    beforeImage: "https://www.tradingview.com/x/gb3wKk6s/",
+    afterImage: "https://www.tradingview.com/x/hxLdtTUa/",
+    description: "The anticipated reaction from the rejection block played out as expected, validating the bearish scenario outlined in the original analysis. After reaching the identified resistance zone, price failed to establish acceptance above the rejection block and instead showed clear selling pressure, confirming that supply remained active within the area. The advance into resistance lacked the impulsive strength required for a bullish continuation and ultimately resulted in a sharp downside expansion. This reaction reinforced the view that the preceding upward movement was corrective in nature rather than the beginning of a sustained bullish trend. As sellers regained control, market structure shifted lower and momentum accelerated to the downside. Following the rejection, price moved aggressively toward the previously identified liquidity area, successfully reaching and sweeping the liquidity resting beneath the range. The liquidity objective highlighted in the initial thesis has now been fulfilled, demonstrating how the market utilized the resistance zone as a distribution area before seeking liquidity at lower levels. The selloff into liquidity was characterized by strong bearish displacement, indicating conviction from market participants and confirming the significance of the rejection block as the origin of the move. With the targeted liquidity now taken, the market has reached an important reaction zone where participants will be monitoring for signs of absorption, consolidation, or continuation. Outcome Summary:The bearish thesis was validated as price rejected from the identified rejection block, failed to sustain higher prices, and delivered the projected move into the liquidity area below. The key resistance zone successfully acted as the decision point for the market, while the targeted liquidity objective was achieved, completing the primary scenario outlined in the original analysis.",
+    date: "2026-05-04",
+    datepub: "2026-06-09",
+  },
 ];
 
 export const MARKET_ANALYSIS: MarketAnalysis[] = [
@@ -51,7 +52,8 @@ export const MARKET_ANALYSIS: MarketAnalysis[] = [
     image: "https://www.tradingview.com/x/gb3wKk6s/",
     date: "2026-05-04",
     title:"Rejection at Key Resistance with Liquidity Formation in BTCUSD",
-    description: "I observed a clear shift in market structure following a strong impulsive bearish move that originated from a well-defined rejection block. Price reacted sharply from this zone, confirming the presence of strong supply and initiating a downside expansion. After the impulsive drop, the market transitioned into a corrective phase, where price began forming a base within a defined liquidity area.\nDuring this phase, price developed a gradual ascending structure, respecting a short-term trendline while consistently creating higher lows. This movement appears corrective rather than impulsive, suggesting that it is driven more by rebalancing and liquidity engineering rather than strong bullish intent. The liquidity formed within this range indicates resting orders, which the market may use before the next directional move.\nCurrently, price is approaching the previously established rejection block, which acts as a key resistance zone. This area is significant as it was the origin of the last strong bearish impulse, making it a high-probability reaction point. The approach toward this zone lacks strong impulsive conviction and appears relatively controlled, which often precedes a reaction rather than continuation.\nSpeculative Outlook: Price is now entering a critical rejection block, making this a decision point for the market. If bearish candlestick patterns or rejection behavior forms within this zone, it would indicate that sellers are stepping back in, potentially leading to another downside move targeting the liquidity area below.\nThere is also a possibility of a liquidity grab above the rejection block, where price briefly breaks the zone to capture resting buy-side liquidity before reversing to the downside. This scenario would further strengthen the bearish bias.\nHowever, if price manages to sustain above the rejection block with strong impulsive bullish candles, it would invalidate the immediate bearish outlook and suggest a shift toward continuation. Until that confirmation appears, the current structure favors a bearish reaction from this key resistance zone.",
+    description: "I observed a clear shift in market structure following a strong impulsive bearish move that originated from a well-defined rejection block. Price reacted sharply from this zone, confirming the presence of strong supply and initiating a downside expansion. After the impulsive drop, the market transitioned into a corrective phase, where price began forming a base within a defined liquidity area.\nDuring this phase, price developed a gradual ascending structure, respecting a short-term trendline while consistently creating higher lows. This movement appears corrective rather than impulsive, suggesting that it is driven more by rebalancing and liquidity engineering rather than strong bullish intent. The liquidity formed within this range indicates resting orders, which the market may use before the next directional move.\nCurrently, price is approaching the previously established rejection block, which acts as a key resistance zone. This area is significant as it was the origin of the last strong bearish impulse, making it a high-probability reaction point. The approach toward this zone lacks strong impulsive conviction and appears relatively controlled, which often precedes a reaction rather than continuation.\nSpeculative Outlook: Price is now entering a critical rejection block, making this a decision point for the market. If bearish candlestick patterns or rejection behavior forms within this zone, it would indicate that sellers are stepping back in, potentially leading to another downside move targeting the liquidity area below.\nThere is also a possibility of a liquidity grab above the rejection block, where price briefly breaks the zone to capture resting buy-side liquidity before reversing to the downside. This scenario would further strengthen the bearish bias.\nHowever, if price manages to sustain above the rejection block with strong impulsive bullish candles, it would invalidate the immediate bearish outlook and suggest a shift toward continuation. Until that confirmation appears, the current structure favors a bearish reaction from this key resistance zone. ",
+    disclaimer: "NOT INVESTMENT ADVICE-RESEARCH ONLY.",
   },
   // {
   //   id: "a2",

@@ -264,8 +264,8 @@ const SpecializationBar = () => (
           <p className="text-[11px] uppercase tracking-widest text-white/80">
             Validation Rate
           </p>
-          <p className="text-3xl font-bold text-white">
-            {ANALYTICAL_PERFORMANCE.validationAccuracy}%
+          <p className="text-1xl font-bold text-white">
+            {ANALYTICAL_PERFORMANCE.validationAccuracy}
           </p>
         </div>
         <div className="col-span-2 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/[0.05] p-6 rounded-xl flex items-center justify-between">
@@ -404,6 +404,9 @@ const MarketGrid = () => (
       </span>
     ))
   : null}</div>
+  <div className="space-y-2">
+                  <div className="text-1xl text-red-400 italic leading-[1.2] font-bold tracking-tight">{item.disclaimer}</div>
+                </div>
              </div>
 
              <button className="flex items-center justify-between group/link w-full text-left pt-2">
@@ -467,9 +470,9 @@ const ExecutionLog = () => {
                onChange={(e) => setFilter(prev => ({ ...prev, result: e.target.value || null }))}
              >
                <option value="" style={{ color: 'black' }}>Status: ALL</option>
-               <option value="win" style={{ color: 'black' }}>Status: Validated</option>
-               <option value="loss" style={{ color: 'black' }}>Status: Invalidated</option>
-               <option value="breakeven" style={{ color: 'black' }}>Status: Neutral</option>
+               <option value="VALIDATED" style={{ color: 'black' }}>Status: Validated</option>
+               <option value="INVALIDATED" style={{ color: 'black' }}>Status: Invalidated</option>
+               <option value="NEUTRAL" style={{ color: 'black' }}>Status: Neutral</option>
              </select>
            </div>
         </div>
@@ -489,7 +492,7 @@ const ExecutionLog = () => {
                 <div className="absolute top-6 left-6 z-20">
                   <span className="px-3 py-1 bg-black/60 border border-white/5 text-[10px] font-mono text-white/80 uppercase tracking-widest">Initial Thesis [Market Structure]</span>
                 </div>
-                <a href="https://www.tradingview.com/x/XtbUPDNV/" target="_blank" rel="noopener noreferrer">
+                <a href={Analysis.beforeImage} target="_blank" rel="noopener noreferrer">
                   <img src={Analysis.beforeImage} alt={`Market Structure`} className="object-cover w-full h-full transition-all duration-1000" referrerPolicy="no-referrer"/>
                 </a>
               </div>
@@ -505,7 +508,7 @@ const ExecutionLog = () => {
                 <div className="absolute top-6 left-6 z-20">
                   <span className="px-3 py-1 bg-black/60 border border-white/5 text-[10px] font-mono text-white/80 uppercase tracking-widest">Outcome  [market response]</span>
                 </div>
-                <a href="https://www.tradingview.com/x/hYJTeBhy/" target="_blank" rel="noopener noreferrer">
+                <a href={Analysis.afterImage} target="_blank" rel="noopener noreferrer">
                 <img src={Analysis.afterImage} alt={`Market Response`} className="object-cover w-full h-full transition-all duration-1000" referrerPolicy="no-referrer" />
               </a>
               </div>
@@ -524,7 +527,7 @@ const ExecutionLog = () => {
   )}</h3>
                     <div className="flex items-center gap-4">
                       <span className="text-[12px] font-black">
-                       {Analysis.date}
+                       {Analysis.datepub}
                       </span>
                       <div className="w-1 h-3 bg-white/5" />
                       <span className="text-[12px] text-text-s uppercase font-bold leading-none">{Analysis.date}</span>
@@ -535,19 +538,19 @@ const ExecutionLog = () => {
                 <div className="grid grid-cols-4 gap-10 mb-12">
                   <div className="space-y-3">
                     <div className="text-[9px] uppercase tracking-[0.2em] text-text-s font-black">Initial Thesis</div>
-                    <div className="font-mono text-3xl font-bold text-white tracking-tighter">{Analysis.initialforecast}</div>
+                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.initialforecast}</div>
                   </div>
                   <div className="space-y-3">
                     <div className="text-[9px] uppercase tracking-[0.2em] text-text-s font-black">Observed Delivery</div>
-                    <div className="font-mono text-3xl font-bold text-white tracking-tighter">{Analysis.observedoutcome}</div>
+                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.observedoutcome}</div>
                   </div>
                   <div className="space-y-3">
                     <div className="text-[9px] uppercase tracking-[0.2em] text-text-s font-black">Validation Status</div>
-                    <div className="font-mono text-xl font-bold text-data-blue/80 uppercase">{Analysis.validationstatus}</div>
+                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.validationstatus}</div>
                   </div>
                   <div className="space-y-4">
                     <div className="text-[9px] uppercase tracking-[0.2em] text-text-s font-black">Reaction Magnitude</div>
-                    <div className="font-mono text-3xl font-bold text-white tracking-tighter">{Analysis.reactionmagnitude}</div>
+                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.reactionmagnitude}</div>
                   </div>
                 </div>
               </div>
@@ -755,6 +758,7 @@ const Contact = () => (
           Ahsan Raza <span className="text-black font-bold text-[20px] ml-2 font-normal"></span>
           <br />
           <span className="text-[18px] text-white/40 font-bold mt-2 block pt-7"> © 2026</span>
+          <span className="text-[12px] text-white/35 font-bold mt-2 block pt-7"> Independent market research. Not investment advice</span>
         </div>
       </div>
     </div>
