@@ -499,8 +499,8 @@ const ExecutionLog = () => {
               <div className="relative overflow-hidden aspect-video xl:aspect-auto border-2 border-black">
                 <div className="absolute top-6 right-6 z-20">
                   <div className={`px-5 py-2 text-[9px] font-black uppercase tracking-[0.2em] shadow-2xl border ${
-                    Analysis.result === 'Validated' ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400' : 
-                    Analysis.result === 'Invalidated' ? 'bg-red-500/10 border-red-500/50 text-red-400' : 'bg-white/10 border-white/20 text-white'
+                    Analysis.result === 'VALIDATED' ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400' : 
+                    Analysis.result === 'INVALIDATED' ? 'bg-red-500/10 border-red-500/50 text-red-400' : 'bg-white/10 border-white/20 text-white'
                   }`}>
                     Result: {Analysis.result}
                   </div>
