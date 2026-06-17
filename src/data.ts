@@ -7,21 +7,6 @@ export const ANALYTICAL_PERFORMANCE: AnalyticalPerformance = {
   averageReactionRange: 0, // percentage
 };
 export const MOCK_Analysis: Analysis[] = [
-  // {
-  //   asset: "",
-  //   pair: "",
-  //   tf: "",
-  //   bias: "",
-  //   initialforecast: "",
-  //   observedoutcome: "",
-  //   validationstatus: "",
-  //   reactionmagnitude:"",
-  //   result: "",
-  //   beforeImage: "",
-  //   afterImage: "",
-  //   description: "Outcome Pending",
-  //   date: "",
-  // },
  {
     asset: "crypto",
     pair: "BTCUSD",
@@ -48,7 +33,7 @@ export const MARKET_ANALYSIS: MarketAnalysis[] = [
     tf: "-1D",
     conditions:"NULL",
     bias: "bearish",
-    status: "Active",
+    status: "Completed",
     image: "https://www.tradingview.com/x/gb3wKk6s/",
     date: "2026-05-04",
     title:"Rejection at Key Resistance with Liquidity Formation in BTCUSD",

@@ -412,7 +412,7 @@ const MarketGrid = () => (
              <button className="flex items-center justify-between group/link w-full text-left pt-2">
                 <div className="flex items-center gap-3">
                    <div className="w-6 h-0.5 bg-accent/20 transition-all duration-500 group-hover/link:w-12 group-hover/link:bg-accent/60" />
-                   <a href='' className="text-[10px] uppercase tracking-[0.2em] font-black text-text-s group-hover/link:text-accent transition-colors">View Full Thesis</a>
+                   {/* <a href='' className="text-[10px] uppercase tracking-[0.2em] font-black text-text-s group-hover/link:text-accent transition-colors">View Full Thesis</a> */}
                 </div>
                 <ArrowUpRight size={14} className="text-text-s group-hover/link:text-accent transition-all duration-500" />
              </button>
