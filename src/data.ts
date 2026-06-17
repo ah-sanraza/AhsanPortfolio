@@ -26,20 +26,7 @@ export const MOCK_Analysis: Analysis[] = [
 ];
 
 export const MARKET_ANALYSIS: MarketAnalysis[] = [
-  {
-    id: "a1",
-    asset: "crypto",
-    pair: "BTCUSD",
-    tf: "-1D",
-    conditions:"NULL",
-    bias: "bearish",
-    status: "Completed",
-    image: "https://www.tradingview.com/x/gb3wKk6s/",
-    date: "2026-05-04",
-    title:"Rejection at Key Resistance with Liquidity Formation in BTCUSD",
-    description: "I observed a clear shift in market structure following a strong impulsive bearish move that originated from a well-defined rejection block. Price reacted sharply from this zone, confirming the presence of strong supply and initiating a downside expansion. After the impulsive drop, the market transitioned into a corrective phase, where price began forming a base within a defined liquidity area.\nDuring this phase, price developed a gradual ascending structure, respecting a short-term trendline while consistently creating higher lows. This movement appears corrective rather than impulsive, suggesting that it is driven more by rebalancing and liquidity engineering rather than strong bullish intent. The liquidity formed within this range indicates resting orders, which the market may use before the next directional move.\nCurrently, price is approaching the previously established rejection block, which acts as a key resistance zone. This area is significant as it was the origin of the last strong bearish impulse, making it a high-probability reaction point. The approach toward this zone lacks strong impulsive conviction and appears relatively controlled, which often precedes a reaction rather than continuation.\nSpeculative Outlook: Price is now entering a critical rejection block, making this a decision point for the market. If bearish candlestick patterns or rejection behavior forms within this zone, it would indicate that sellers are stepping back in, potentially leading to another downside move targeting the liquidity area below.\nThere is also a possibility of a liquidity grab above the rejection block, where price briefly breaks the zone to capture resting buy-side liquidity before reversing to the downside. This scenario would further strengthen the bearish bias.\nHowever, if price manages to sustain above the rejection block with strong impulsive bullish candles, it would invalidate the immediate bearish outlook and suggest a shift toward continuation. Until that confirmation appears, the current structure favors a bearish reaction from this key resistance zone. ",
-    disclaimer: "NOT INVESTMENT ADVICE-RESEARCH ONLY.",
-  },
+
   {
     id: "a2",
     asset: "commodities",
@@ -52,6 +39,20 @@ export const MARKET_ANALYSIS: MarketAnalysis[] = [
     date: "2026-06-17",
     title:"Liquidity Formation Following Bearish Expansion in XAUUSD",
     description: "I observed a clear shift in market structure following a strong impulsive bearish move that originated from a well-defined support-to-resistance region. Price reacted aggressively from this zone, confirming the presence of strong supply and initiating a downside expansion. After the impulsive decline, the market transitioned into a corrective phase, following a sweep of liquidity beneath recent lows.During this phase, price developed a recovery structure while respecting the liquidity low as a foundation. The advance has been relatively controlled, forming short-term higher lows; however, the overall movement appears corrective rather than impulsive. This suggests that the move is driven more by rebalancing and liquidity engineering rather than strong bullish intent.The liquidity formed near the lows indicates the presence of resting orders, which the market has already interacted with before initiating the current recovery. Despite this, the structure lacks the displacement and momentum typically required to confirm a sustained bullish reversal.Currently, price is approaching a short-term resistance area formed during the previous bearish expansion. This zone acts as a key reaction point, as it represents an area where supply previously entered the market. The approach toward this level remains relatively measured and lacks strong bullish conviction, which often increases the probability of a reaction rather than continuation.Speculative Outlook:Price is now testing a critical resistance region, making this a decision point for the market. If rejection behavior or bearish candlestick patterns develop within this zone, it would indicate that sellers are re-entering, potentially leading to another move lower targeting the liquidity area below.There is also a possibility of a liquidity grab above this resistance, where price briefly trades beyond the zone to capture buy-side liquidity before reversing to the downside. Such a move would further reinforce the bearish bias.However, if price manages to sustain above this resistance with strong impulsive bullish candles and clear follow-through, it would weaken the immediate bearish outlook and indicate broader structural recovery. Until such confirmation appears, the current price action favors a corrective rally within a bearish framework.",
+    disclaimer: "NOT INVESTMENT ADVICE-RESEARCH ONLY.",
+  },
+    {
+    id: "a1",
+    asset: "crypto",
+    pair: "BTCUSD",
+    tf: "-1D",
+    conditions:"NULL",
+    bias: "bearish",
+    status: "Completed",
+    image: "https://www.tradingview.com/x/gb3wKk6s/",
+    date: "2026-05-04",
+    title:"Rejection at Key Resistance with Liquidity Formation in BTCUSD",
+    description: "I observed a clear shift in market structure following a strong impulsive bearish move that originated from a well-defined rejection block. Price reacted sharply from this zone, confirming the presence of strong supply and initiating a downside expansion. After the impulsive drop, the market transitioned into a corrective phase, where price began forming a base within a defined liquidity area.\nDuring this phase, price developed a gradual ascending structure, respecting a short-term trendline while consistently creating higher lows. This movement appears corrective rather than impulsive, suggesting that it is driven more by rebalancing and liquidity engineering rather than strong bullish intent. The liquidity formed within this range indicates resting orders, which the market may use before the next directional move.\nCurrently, price is approaching the previously established rejection block, which acts as a key resistance zone. This area is significant as it was the origin of the last strong bearish impulse, making it a high-probability reaction point. The approach toward this zone lacks strong impulsive conviction and appears relatively controlled, which often precedes a reaction rather than continuation.\nSpeculative Outlook: Price is now entering a critical rejection block, making this a decision point for the market. If bearish candlestick patterns or rejection behavior forms within this zone, it would indicate that sellers are stepping back in, potentially leading to another downside move targeting the liquidity area below.\nThere is also a possibility of a liquidity grab above the rejection block, where price briefly breaks the zone to capture resting buy-side liquidity before reversing to the downside. This scenario would further strengthen the bearish bias.\nHowever, if price manages to sustain above the rejection block with strong impulsive bullish candles, it would invalidate the immediate bearish outlook and suggest a shift toward continuation. Until that confirmation appears, the current structure favors a bearish reaction from this key resistance zone. ",
     disclaimer: "NOT INVESTMENT ADVICE-RESEARCH ONLY.",
   },
   // {
