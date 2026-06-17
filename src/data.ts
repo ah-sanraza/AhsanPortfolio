@@ -57,9 +57,9 @@ export const MARKET_ANALYSIS: MarketAnalysis[] = [
   },
   {
     id: "a2",
-    asset: "crypto",
-    pair: "BTCUSD",
-    tf: "-1D",
+    asset: "commodities",
+    pair: "XAUUSD",
+    tf: "-4H",
     conditions:"NULL",
     bias: "bearish",
     status: "Active",
