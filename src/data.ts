@@ -7,27 +7,11 @@ export const ANALYTICAL_PERFORMANCE: AnalyticalPerformance = {
   averageReactionRange: 0, // percentage
 };
 export const MOCK_Analysis: Analysis[] = [
- {
-    asset: "crypto",
-    pair: "BTCUSD",
-    tf: "-1D",
-    bias: "bullish",
-    initialforecast: "Bearish Delivery: 84,000 to 81,000 → 60,000",
-    observedoutcome: "Market Delivery: 82,800 → 59,150",
-    validationstatus: "VALIDATED",
-    reactionmagnitude:"~25% Bearish Move",
-    result: "VALIDATED",
-    beforeImage: "https://www.tradingview.com/x/gb3wKk6s/",
-    afterImage: "https://www.tradingview.com/x/hxLdtTUa/",
-    description: "The anticipated reaction from the rejection block played out as expected, validating the bearish scenario outlined in the original analysis. After reaching the identified resistance zone, price failed to establish acceptance above the rejection block and instead showed clear selling pressure, confirming that supply remained active within the area. The advance into resistance lacked the impulsive strength required for a bullish continuation and ultimately resulted in a sharp downside expansion. This reaction reinforced the view that the preceding upward movement was corrective in nature rather than the beginning of a sustained bullish trend. As sellers regained control, market structure shifted lower and momentum accelerated to the downside. Following the rejection, price moved aggressively toward the previously identified liquidity area, successfully reaching and sweeping the liquidity resting beneath the range. The liquidity objective highlighted in the initial thesis has now been fulfilled, demonstrating how the market utilized the resistance zone as a distribution area before seeking liquidity at lower levels. The selloff into liquidity was characterized by strong bearish displacement, indicating conviction from market participants and confirming the significance of the rejection block as the origin of the move. With the targeted liquidity now taken, the market has reached an important reaction zone where participants will be monitoring for signs of absorption, consolidation, or continuation. Outcome Summary:The bearish thesis was validated as price rejected from the identified rejection block, failed to sustain higher prices, and delivered the projected move into the liquidity area below. The key resistance zone successfully acted as the decision point for the market, while the targeted liquidity objective was achieved, completing the primary scenario outlined in the original analysis.",
-    date: "2026-05-04",
-    datepub: "2026-06-09",
-  },
-   {
-    asset: "crypto",
+     {
+    asset: "commodities",
     pair: "XAUUSD",
     tf: "4H",
-    bias: "bullish",
+    bias: "bearish",
     initialforecast: "Bearish Delivery: 4,595 to 4,468 → 4,024",
     observedoutcome: "Market Delivery: 4,380 → 3,965",
     validationstatus: "NEUTRAL",
@@ -38,6 +22,22 @@ export const MOCK_Analysis: Analysis[] = [
     description: "Price ultimately moved lower in line with the broader bearish framework outlined in the initial analysis; however, the anticipated corrective advance failed to reach the identified resistance zone that had been highlighted as the primary decision point. Instead, selling pressure emerged earlier than expected, causing the market to rotate lower before a complete interaction with the proposed reaction area could occur.The recovery from the liquidity sweep remained corrective in nature and lacked strong bullish momentum, but the absence of a full test of resistance leaves the proposed rejection scenario unconfirmed. As a result, the outcome remains neutral from a validation perspective. While downside continuation aligned with the broader directional bias, the key resistance objective was not fulfilled, leaving the original thesis neither fully validated nor invalidated.Outcome Summary:Price rotated lower before reaching the projected resistance zone. The broader bearish direction remained intact, but without interaction at the identified decision point, the initial thesis remains neutral in outcome.",
     date: "2026-06-24",
     datepub: "2026-06-17",
+  },
+ {
+    asset: "crypto",
+    pair: "BTCUSD",
+    tf: "-1D",
+    bias: "bearish",
+    initialforecast: "Bearish Delivery: 84,000 to 81,000 → 60,000",
+    observedoutcome: "Market Delivery: 82,800 → 59,150",
+    validationstatus: "VALIDATED",
+    reactionmagnitude:"~25% Bearish Move",
+    result: "VALIDATED",
+    beforeImage: "https://www.tradingview.com/x/gb3wKk6s/",
+    afterImage: "https://www.tradingview.com/x/hxLdtTUa/",
+    description: "The anticipated reaction from the rejection block played out as expected, validating the bearish scenario outlined in the original analysis. After reaching the identified resistance zone, price failed to establish acceptance above the rejection block and instead showed clear selling pressure, confirming that supply remained active within the area. The advance into resistance lacked the impulsive strength required for a bullish continuation and ultimately resulted in a sharp downside expansion. This reaction reinforced the view that the preceding upward movement was corrective in nature rather than the beginning of a sustained bullish trend. As sellers regained control, market structure shifted lower and momentum accelerated to the downside. Following the rejection, price moved aggressively toward the previously identified liquidity area, successfully reaching and sweeping the liquidity resting beneath the range. The liquidity objective highlighted in the initial thesis has now been fulfilled, demonstrating how the market utilized the resistance zone as a distribution area before seeking liquidity at lower levels. The selloff into liquidity was characterized by strong bearish displacement, indicating conviction from market participants and confirming the significance of the rejection block as the origin of the move. With the targeted liquidity now taken, the market has reached an important reaction zone where participants will be monitoring for signs of absorption, consolidation, or continuation. Outcome Summary:The bearish thesis was validated as price rejected from the identified rejection block, failed to sustain higher prices, and delivered the projected move into the liquidity area below. The key resistance zone successfully acted as the decision point for the market, while the targeted liquidity objective was achieved, completing the primary scenario outlined in the original analysis.",
+    date: "2026-05-04",
+    datepub: "2026-06-09",
   },
 ];
 
