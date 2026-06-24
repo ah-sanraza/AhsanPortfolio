@@ -23,6 +23,22 @@ export const MOCK_Analysis: Analysis[] = [
     date: "2026-05-04",
     datepub: "2026-06-09",
   },
+   {
+    asset: "crypto",
+    pair: "XAUUSD",
+    tf: "4H",
+    bias: "bullish",
+    initialforecast: "Bearish Delivery: 4,595 to 4,468 → 4,024",
+    observedoutcome: "Market Delivery: 4,380 → 3,965",
+    validationstatus: "NEUTRAL",
+    reactionmagnitude:"~9.5% Bearish Move",
+    result: "NEUTRAL",
+    beforeImage: "https://www.tradingview.com/x/cDJvBDLZ/",
+    afterImage: "https://www.tradingview.com/x/CE7rybiS/",
+    description: "Price ultimately moved lower in line with the broader bearish framework outlined in the initial analysis; however, the anticipated corrective advance failed to reach the identified resistance zone that had been highlighted as the primary decision point. Instead, selling pressure emerged earlier than expected, causing the market to rotate lower before a complete interaction with the proposed reaction area could occur.The recovery from the liquidity sweep remained corrective in nature and lacked strong bullish momentum, but the absence of a full test of resistance leaves the proposed rejection scenario unconfirmed. As a result, the outcome remains neutral from a validation perspective. While downside continuation aligned with the broader directional bias, the key resistance objective was not fulfilled, leaving the original thesis neither fully validated nor invalidated.Outcome Summary:Price rotated lower before reaching the projected resistance zone. The broader bearish direction remained intact, but without interaction at the identified decision point, the initial thesis remains neutral in outcome.",
+    date: "2026-06-24",
+    datepub: "2026-06-17",
+  },
 ];
 
 export const MARKET_ANALYSIS: MarketAnalysis[] = [
@@ -34,7 +50,7 @@ export const MARKET_ANALYSIS: MarketAnalysis[] = [
     tf: "-4H",
     conditions:"NULL",
     bias: "bearish",
-    status: "Active",
+    status: "Completed",
     image: "https://www.tradingview.com/x/cDJvBDLZ/",
     date: "2026-06-17",
     title:"Liquidity Formation Following Bearish Expansion in XAUUSD",
