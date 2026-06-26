@@ -48,7 +48,7 @@ export const MARKET_ANALYSIS: MarketAnalysis[] = [
     pair: "BTCUSD",
     tf: "-1W",
     conditions:"NULL",
-    bias: "bearish",
+    bias: "bullish",
     status: "Active",
     image: "https://www.tradingview.com/x/bhQGX3xG/",
     date: "2026-06-26",
