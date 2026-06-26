@@ -10,7 +10,7 @@ export const MOCK_Analysis: Analysis[] = [
      {
     asset: "commodities",
     pair: "XAUUSD",
-    tf: "4H",
+    tf: "-4H",
     bias: "bearish",
     initialforecast: "Bearish Delivery: 4,595 to 4,468 → 4,024",
     observedoutcome: "Market Delivery: 4,380 → 3,965",
@@ -42,7 +42,20 @@ export const MOCK_Analysis: Analysis[] = [
 ];
 
 export const MARKET_ANALYSIS: MarketAnalysis[] = [
-
+  {
+    id: "a3",
+    asset: "crypto",
+    pair: "BTCUSD",
+    tf: "-1W",
+    conditions:"NULL",
+    bias: "bearish",
+    status: "Active",
+    image: "https://www.tradingview.com/x/bhQGX3xG/",
+    date: "2026-06-26",
+    title:"BTCUSD Holding a Key Weekly Rejection Block and Liquidity Gravity Zone",
+    description: "I observed a strong bullish expansion following the formation of a liquidity gravity zone, where price initially developed a base before accelerating sharply to the upside, establishing higher highs and higher lows. This impulsive advance was driven by sustained buying pressure and eventually carried BTCUSD into new all-time high territory. After reaching these elevated levels, the market gradually transitioned into a corrective phase, delivering lower highs and lower lows while retracing toward previously established areas of interest.As price declined, it approached a significant higher timeframe support region consisting of a Rejection Block and an embedded Fair Value Gap. This confluence represents the primary area of interest and serves as a technically significant support region, as it aligns with the origin of the prior impulsive expansion and previously inefficient price delivery. Beneath this region lies an Order Flow zone, which may provide additional support should price extend slightly lower before establishing acceptance.Currently, price is approaching this previously established support confluence, which acts as a key decision zone for the market. This area is significant as it represents the origin of the prior impulsive expansion. The decline into this region has been relatively controlled and appears corrective rather than impulsive, a characteristic often associated with testing higher timeframe support rather than immediate continuation. While the Rejection Block and Fair Value Gap remain the preferred area for a reaction, the underlying Order Flow zone may still provide support if a deeper test occurs.Speculative Outlook: Price is now entering a critical higher timeframe support region, making this an important decision point for the market. If bullish candlestick patterns or rejection behavior develops within the support confluence, it would indicate renewed demand, potentially leading to a higher timeframe recovery.There is also a possibility of a liquidity grab below the primary support zone, where price briefly trades into the underlying Order Flow area, captures resting sell-side liquidity, and then reverses to the upside. Such a scenario would further reinforce the probability of a higher timeframe recovery.However, if price fails to hold within this support confluence and begins closing decisively below it, the probability of continued downside expansion would increase. Until such confirmation appears, the current market structure continues to support the possibility of a bullish reaction from this key higher timeframe support region.",
+    disclaimer: "NOT INVESTMENT ADVICE-RESEARCH ONLY.",
+  },
   {
     id: "a2",
     asset: "commodities",
