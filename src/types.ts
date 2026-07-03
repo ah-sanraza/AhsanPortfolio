@@ -5,7 +5,7 @@ export type AnalyticalPerformance = {
   publishedAnalysis: number;
   validated: number;
   invalidated: number;
-  validationAccuracy: number; // percentage
+  validationAccuracy: string; // percentage
   averageReactionRange: number; // percentage
 };
 
@@ -18,11 +18,12 @@ export type Analysis = {
   validationstatus?: string;
   observedoutcome?: string;
   initialforecast?: string;
-  result?: AnalysisResult;
+  result?: String;
   beforeImage?: string;
   afterImage?: string;
   description?: string;
   date?: string;
+  datepub?: string;
 };
 
 export type MarketAnalysis = {
@@ -37,6 +38,7 @@ export type MarketAnalysis = {
   description?: string;
   tf?: string;
   conditions?: string;
+  disclaimer?: string;
 };
 
 export type Insight = {
