@@ -42,6 +42,20 @@ export const MOCK_Analysis: Analysis[] = [
 ];
 
 export const MARKET_ANALYSIS: MarketAnalysis[] = [
+  {
+    id: "a8",
+    asset: "commodities",
+    pair: "XAUUSD",
+    tf: "-4H",  
+    conditions:"NULL",
+    bias: "bearish",
+    status: "Active",
+    image: "https://www.tradingview.com/x/yPtkbOvF/",
+    date: "2026-07-7",
+    title:"XAUUSD Approaches Key 4H Central Zone & Rejection Block Confluence",
+    description: "I observed a clear shift in market structure following a strong impulsive bearish move that established lower highs and lower lows across the 4-hour timeframe. Price reacted sharply from a previously established resistance region, confirming continued selling pressure and initiating a downside expansion. Following the impulsive decline, the market transitioned into a corrective phase, where price began recovering from recent lows.During this phase, price developed a gradual ascending structure while consistently creating higher lows. This recovery appears corrective rather than impulsive, suggesting that the movement is driven more by rebalancing and liquidity seeking rather than sustained bullish strength. The steady advance toward higher prices indicates that the market is revisiting important technical areas before determining its next directional move.Currently, price is approaching a previously established Central Zone, which acts as the first key resistance area. Above this region lies the Rejection Block + FVGs confluence, which represents a higher timeframe resistance zone and a significant area of interest for market participants. The approach into these zones lacks strong impulsive conviction and appears relatively controlled, which often precedes a reaction rather than continuation.Speculative Outlook:Price is now entering a critical resistance region, making this an important decision point for the market. If bearish candlestick patterns or rejection behavior develops within the Central Zone, it would indicate that sellers are stepping back in, potentially leading to another downside move toward lower support.There is also a possibility of a liquidity grab above the Central Zone, where price briefly breaks into the Rejection Block + FVGs confluence, captures resting buy-side liquidity, and then reverses to the downside. Such a scenario would further strengthen the bearish bias.However, if price manages to sustain above both the Central Zone and the Rejection Block + FVGs confluence with strong impulsive bullish candles, it would invalidate the immediate bearish outlook and suggest a shift toward continuation. Until that confirmation appears, the current structure favors monitoring these resistance zones for a potential bearish reaction.",
+    disclaimer: "NOT INVESTMENT ADVICE-RESEARCH ONLY.",
+  },
       {
     id: "a7",
     asset: "commodities",
