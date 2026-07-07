@@ -42,6 +42,20 @@ export const MOCK_Analysis: Analysis[] = [
 ];
 
 export const MARKET_ANALYSIS: MarketAnalysis[] = [
+      {
+    id: "a7",
+    asset: "commodities",
+    pair: "XAUUSD",
+    tf: "-1W",  
+    conditions:"NULL",
+    bias: "bullish",
+    status: "Active",
+    image: "https://www.tradingview.com/x/wlPKUa8g/",
+    date: "2026-07-7",
+    title:"XAUUSD Approaching a Key Weekly Potential Zone After an Extended Corrective Decline",
+    description: "I observed a clear shift in market structure following a prolonged corrective decline that developed after a strong impulsive bullish expansion. Price initially established a series of higher highs and higher lows before gradually losing momentum, allowing sellers to regain control and transition the market into a sustained corrective phase. As the decline progressed, price continued respecting a descending resistance trendline, confirming that bearish pressure remained in control throughout the correction.During this phase, price developed a sequence of lower highs while steadily approaching a previously identified Potential Zone. This movement appears controlled rather than impulsive, suggesting that the market is gradually rebalancing as it approaches a higher timeframe area of interest. The continued respect of the descending resistance indicates that buyers have yet to regain meaningful control despite the slowing momentum.Currently, price is approaching the previously established Potential Zone, which acts as a key support region. This area is significant as it represents a higher timeframe location where market participants may begin responding following the extended corrective decline. The approach toward this zone remains relatively measured, making it an important technical area to monitor for a potential shift in order flow.Speculative Outlook: Price is now entering a critical Potential Zone, making this an important decision point for the market. If bullish candlestick patterns or rejection behavior develops within this region, it would indicate renewed buying interest, potentially leading to a higher timeframe recovery while maintaining respect for the broader market structure.There is also a possibility of a liquidity sweep below the Potential Zone, where price briefly trades beneath the support, captures resting sell-side liquidity, and then reverses to the upside. Such a scenario would further strengthen the probability of a bullish recovery from this higher timeframe region.However, if price fails to hold within the Potential Zone and begins closing decisively below it, the probability of continued downside expansion would increase. Until such confirmation appears, the current structure supports monitoring this key support region for a potential bullish reaction.",
+    disclaimer: "NOT INVESTMENT ADVICE-RESEARCH ONLY.",
+  },
     {
     id: "a6",
     asset: "forex",
