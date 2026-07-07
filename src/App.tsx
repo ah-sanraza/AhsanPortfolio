@@ -324,9 +324,13 @@ const MarketGrid = () => (
           whileHover={{ y: -8 }}
           key={item.id} 
           className="terminal-panel grid grid-cols-1 xl:grid-cols-12 overflow-hidden group transition-all duration-500 hover:border-accent/30">
-          <div className="xl:col-span-12 aspect-video xl:aspect-auto relative overflow-hidden bg-muted">
+          <div className="xl:col-span-12 aspect-video xl:aspect-auto relative overflow-hidden bg-muted"><a
+  href={item.image}
+  target="_blank"
+  rel="noopener noreferrer"
+>
             <img src={item.image} alt={item.pair} className="object-cover w-full h-full group-hover:grayscale-[0.2] transition-all duration-1000 scale-100 group-hover:scale-98" referrerPolicy="no-referrer" />
-            
+            </a>
             {/* Heatmap Overlay effect */}
             <div className="absolute inset-0 from-bg/90 selection:to-transparent pointer-events-none opacity-40 group-hover:opacity-10 transition-opacity" />
             
