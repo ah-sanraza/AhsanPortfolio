@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { collection, getDocs, query, orderBy, where } from "firebase/firestore";
-import { analysis,outcome } from "../firebase";
+import { db } from "../firebase";
 import {
   TrendingDown,
   TrendingUp,
@@ -57,7 +57,7 @@ const Navbar = () => {
          <Link to="/" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Overview
         </Link>
-        <Link to="/analysis" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+        <Link to="/analyses" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Market Research
         </Link>
         <Link to="/outcomes" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
@@ -78,7 +78,7 @@ const Navbar = () => {
     
 {[
   { path: "/", label: "Overview", type: "page" },
-  { path: "/analysis", label: "Market Research", type: "page" },
+  { path: "/analyses", label: "Market Research", type: "page" },
   { path: "/outcomes", label: "Outcomes", type: "page" },
   { path: "/#insights", label: "Insights", type: "hash" },
   { path: "/#researchphilosophy", label: "Philosophy", type: "hash" },
@@ -202,8 +202,8 @@ const SpecializationBar = () => {
 
   useEffect(() => {
   async function fetchStats() {
-    const analysisSnapshot = await getDocs(collection(analysis, "analyses"));
-    const outcomeSnapshot = await getDocs(collection(outcome, "outcome"));
+    const analysisSnapshot = await getDocs(collection(db, "analyses"));
+    const outcomeSnapshot = await getDocs(collection(db, "outcome"));
 
     const analyses = analysisSnapshot.docs.map((doc) => ({
       id: doc.id,
@@ -428,7 +428,7 @@ useEffect(()=>{
  async function fetchMarket(){
 
    const q = query(
-     collection(analysis,"analyses"),
+     collection(db,"analyses"),
      orderBy("date","desc")
    );
 
@@ -613,7 +613,7 @@ useEffect(()=>{
 
 
  const q = query(
-    collection(analysis,"outcome"),
+    collection(db,"outcome"),
     orderBy("datepub","desc")
  );
 

@@ -1,8 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState, useMemo } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { outcome } from "../firebase";
-import { Filter,ArrowRight } from "lucide-react";
+import { db } from "../firebase";
+import { Filter, ArrowRight , ArrowUpRight} from "lucide-react";
 import { motion } from "motion/react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
@@ -24,7 +24,7 @@ export default function OutcomePage() {
     async function fetchOutcomes(){
 
       const snapshot = await getDocs(
-        collection(outcome,"outcome")
+        collection(db,"outcome")
       );
 
       const data = snapshot.docs.map(doc=>({
@@ -192,6 +192,13 @@ export default function OutcomePage() {
                   <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.description}</div>
                  
              </div>
+              <button className="flex items-center justify-between group/link w-full text-left pt-6">
+                <div className="flex items-center gap-3">
+                   <div className="w-6 h-0.5 bg-accent/20 transition-all duration-500 group-hover/link:w-12 group-hover/link:bg-accent/60" />
+                   <Link to={`/analysis/${Analysis.analysisSlug}`} className="text-[10px] uppercase tracking-[0.2em] font-black text-text-s group-hover/link:text-accent transition-colors">View Analysis</Link>
+                </div>
+                <Link to={`/analysis/${Analysis.analysisSlug}`} className="text-[10px] uppercase tracking-[0.2em] font-black text-text-s group-hover/link:text-accent transition-colors"><ArrowUpRight size={14} className="text-text-s group-hover/link:text-accent transition-all duration-500" /></Link>
+             </button>
             </div>
           </motion.div>
         ))}

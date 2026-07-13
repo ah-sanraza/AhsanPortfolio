@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { analysis } from "../firebase";
+import { db } from "../firebase";
 import { Link } from "react-router-dom";
 import {ArrowDownRight,ArrowUpRight,} from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -16,7 +16,7 @@ useEffect(() => {
     const slug = window.location.pathname.split("/").pop();
 
     const q = query(
-      collection(analysis, "analyses"),
+      collection(db, "analyses"),
       where("slug", "==", slug)
     );
 

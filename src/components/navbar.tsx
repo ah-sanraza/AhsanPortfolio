@@ -29,7 +29,7 @@ const Navbar = () => {
         <Link to="/" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Overview
         </Link>
-        <Link to="/analysis" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+        <Link to="/analyses" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Market Research
         </Link>
         <Link to="/outcomes" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
@@ -50,7 +50,7 @@ const Navbar = () => {
     
    {[
   { path: "/", label: "Overview", type: "page" },
-  { path: "/analysis", label: "Market Research", type: "page" },
+  { path: "/analyses", label: "Market Research", type: "page" },
   { path: "/outcomes", label: "Outcomes", type: "page" },
   { path: "/#insights", label: "Insights", type: "hash" },
   { path: "/#researchphilosophy", label: "Philosophy", type: "hash" },

@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { analysis } from "../firebase";
+import { db } from "../firebase";
 import { Link } from "react-router-dom";
 import {ArrowDownRight,ArrowUpRight,Filter} from 'lucide-react';
 import { motion} from 'motion/react';
@@ -21,7 +21,7 @@ export default function AnalysisPage() {
 
   useEffect(() => {
     async function fetchAnalyses() {
-      const snapshot = await getDocs(collection(analysis, "analyses"));
+      const snapshot = await getDocs(collection(db, "analyses"));
 
       const data = snapshot.docs.map((doc) => ({
         id: doc.id,
