@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { useState,} from 'react';
 import {X,Menu} from 'lucide-react';
 const Navbar = () => {
@@ -6,90 +8,77 @@ const Navbar = () => {
   <nav className="fixed top-0 left-0 right-0 z-[60] border-b border-white/[0.03] bg-bg/95 backdrop-blur-md">
     <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       <div className="flex items-center gap-4">
-        <div className="relative">
-          {/* <div className="w-6 h-6 border border-accent/40 flex items-center justify-center">
-            <div className="w-2 h-2 bg-accent shadow-[0_0_10px_rgba(199,167,106,0.5)]" />
-          </div> */}
-          
-        </div>
-          <button
+         {/* Mobile Toggle Button */}
+    <div className="flex items-center gap-4">
+
+  <div className="relative">
+  </div>
+
+  <button
     onClick={() => setOpen(!open)}
     className="md:hidden text-white"
   >
     {open ? <X size={20} /> : <Menu size={20} />}
   </button>
-        {/* <div className="hidden md:flex flex-col">
-          <span className="font-serif text-lg font-bold tracking-tight text-white leading-none w-50"><img src="src/assets/ARLogo.png" alt="" /></span>
-        </div> */}
+
+</div>
+        <div className="relative">
+        </div>
       </div>
       <div className="hidden md:flex items-center gap-12 text-[9px] uppercase tracking-[0.25em] font-black text-text-s/70">
-        <a onClick={(e) => {
-    e.preventDefault();
-    document.getElementById("analysis")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }} href="#analysis" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+        <Link to="/" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+          Overview
+        </Link>
+        <Link to="/analysis" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Market Research
-        </a>
-        <a onClick={(e) => {
-    e.preventDefault();
-    document.getElementById("execution")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }} href="#execution" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+        </Link>
+        <Link to="/outcomes" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Outcomes
-        </a>
-        <a onClick={(e) => {
-    e.preventDefault();
-    document.getElementById("insights")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }} href="#insights" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+        </Link>
+        <HashLink smooth to="/#insights" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Insights
-        </a>
-        <a onClick={(e) => {
-    e.preventDefault();
-    document.getElementById("researchphilosophy")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }} href="#researchphilosophy" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+        </HashLink>
+        <HashLink smooth to="/#researchphilosophy" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
          Philosophy 
-        </a>
-         <a onClick={(e) => {
-    e.preventDefault();
-    document.getElementById("about")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }} href="#about" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+        </HashLink>
+         <HashLink smooth to="/#about" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
          Profile 
-        </a>
+        </HashLink>
       </div>
-      {/* Mobile Toggle Button */}
-
   {open && (
   <div className="md:hidden absolute top-16 left-0 w-full bg-bg border-t border-white/10 flex flex-col items-start px-6 py-6 gap-6 z-50">
     
-    {[
-      { id: "analysis", label: "Market Research" },
-      { id: "execution", label: "Outcomes" },
-      { id: "insights", label: "Insights" },
-      { id: "researchphilosophy", label: "Philosophy" },
-      { id: "about", label: "Profile" },
-      { id: "contact", label: "Connect" },
-    ].map((item) => (
-      <a
-        key={item.id}
-        href={`#${item.id}`}
-        onClick={(e) => {
-          e.preventDefault();
-          document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
-          setOpen(false); // close after click
-        }}
-        className="text-sm uppercase tracking-widest text-white/80 hover:text-accent transition"
-      >
-        {item.label}
-      </a>
-    ))}
+   {[
+  { path: "/", label: "Overview", type: "page" },
+  { path: "/analysis", label: "Market Research", type: "page" },
+  { path: "/outcomes", label: "Outcomes", type: "page" },
+  { path: "/#insights", label: "Insights", type: "hash" },
+  { path: "/#researchphilosophy", label: "Philosophy", type: "hash" },
+  { path: "/#about", label: "Profile", type: "hash" },
+].map((item)=>(
+  
+  item.type === "page" ? (
+    <Link
+      key={item.path}
+      to={item.path}
+      onClick={()=>setOpen(false)}
+      className="text-sm uppercase tracking-widest text-white/80 hover:text-accent transition"
+    >
+      {item.label}
+    </Link>
+  ) : (
+    <HashLink
+      key={item.path}
+      smooth
+      to={item.path}
+      onClick={()=>setOpen(false)}
+      className="text-sm uppercase tracking-widest text-white/80 hover:text-accent transition"
+    >
+      {item.label}
+    </HashLink>
+  )
+
+))}
   </div>
 )}
       <a onClick={(e) => {

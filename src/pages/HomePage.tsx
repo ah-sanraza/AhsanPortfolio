@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
-import { analysis } from "../firebase";
+import { collection, getDocs, query, orderBy, where } from "firebase/firestore";
+import { analysis,outcome } from "../firebase";
 import {
   TrendingDown,
   TrendingUp,
@@ -26,98 +26,87 @@ import {
   Menu,
   X,
   Binary } from 'lucide-react';
-import { INSIGHTS, ANALYTICAL_PERFORMANCE } from './data';
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import { INSIGHTS } from './data';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return(
   <nav className="fixed top-0 left-0 right-0 z-[60] border-b border-white/[0.03] bg-bg/95 backdrop-blur-md">
     <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div className="flex items-center gap-4">
-        <div className="relative">
-          {/* <div className="w-6 h-6 border border-accent/40 flex items-center justify-center">
-            <div className="w-2 h-2 bg-accent shadow-[0_0_10px_rgba(199,167,106,0.5)]" />
-          </div> */}
-          
-        </div>
-          <button
+       {/* Mobile Toggle Button */}
+    <div className="flex items-center gap-4">
+
+  <div className="relative">
+  </div>
+
+  <button
     onClick={() => setOpen(!open)}
     className="md:hidden text-white"
   >
     {open ? <X size={20} /> : <Menu size={20} />}
   </button>
-        {/* <div className="hidden md:flex flex-col">
-          <span className="font-serif text-lg font-bold tracking-tight text-white leading-none w-50"><img src="src/assets/ARLogo.png" alt="" /></span>
-        </div> */}
+
+</div>
+      <div className="flex items-center gap-4">
+        <div className="relative">
+        </div>
       </div>
       <div className="hidden md:flex items-center gap-12 text-[9px] uppercase tracking-[0.25em] font-black text-text-s/70">
-        <a onClick={(e) => {
-    e.preventDefault();
-    document.getElementById("analysis")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }} href="#analysis" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+         <Link to="/" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+          Overview
+        </Link>
+        <Link to="/analysis" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Market Research
-        </a>
-        <a onClick={(e) => {
-    e.preventDefault();
-    document.getElementById("execution")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }} href="#execution" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+        </Link>
+        <Link to="/outcomes" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Outcomes
-        </a>
-        <a onClick={(e) => {
-    e.preventDefault();
-    document.getElementById("insights")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }} href="#insights" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+        </Link>
+        <HashLink smooth to="/#insights" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Insights
-        </a>
-        <a onClick={(e) => {
-    e.preventDefault();
-    document.getElementById("researchphilosophy")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }} href="#researchphilosophy" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+        </HashLink>
+        <HashLink smooth to="/#researchphilosophy" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
          Philosophy 
-        </a>
-         <a onClick={(e) => {
-    e.preventDefault();
-    document.getElementById("about")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }} href="#about" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+        </HashLink>
+         <HashLink smooth to="/#about" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
          Profile 
-        </a>
+        </HashLink>
       </div>
-      {/* Mobile Toggle Button */}
-
   {open && (
   <div className="md:hidden absolute top-16 left-0 w-full bg-bg border-t border-white/10 flex flex-col items-start px-6 py-6 gap-6 z-50">
     
-    {[
-      { id: "analysis", label: "Market Research" },
-      { id: "execution", label: "Outcomes" },
-      { id: "insights", label: "Insights" },
-      { id: "researchphilosophy", label: "Philosophy" },
-      { id: "about", label: "Profile" },
-      { id: "contact", label: "Connect" },
-    ].map((item) => (
-      <a
-        key={item.id}
-        href={`#${item.id}`}
-        onClick={(e) => {
-          e.preventDefault();
-          document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
-          setOpen(false); // close after click
-        }}
-        className="text-sm uppercase tracking-widest text-white/80 hover:text-accent transition"
-      >
-        {item.label}
-      </a>
-    ))}
+{[
+  { path: "/", label: "Overview", type: "page" },
+  { path: "/analysis", label: "Market Research", type: "page" },
+  { path: "/outcomes", label: "Outcomes", type: "page" },
+  { path: "/#insights", label: "Insights", type: "hash" },
+  { path: "/#researchphilosophy", label: "Philosophy", type: "hash" },
+  { path: "/#about", label: "Profile", type: "hash" },
+].map((item)=>(
+  
+  item.type === "page" ? (
+    <Link
+      key={item.path}
+      to={item.path}
+      onClick={()=>setOpen(false)}
+      className="text-sm uppercase tracking-widest text-white/80 hover:text-accent transition"
+    >
+      {item.label}
+    </Link>
+  ) : (
+    <HashLink
+      key={item.path}
+      smooth
+      to={item.path}
+      onClick={()=>setOpen(false)}
+      className="text-sm uppercase tracking-widest text-white/80 hover:text-accent transition"
+    >
+      {item.label}
+    </HashLink>
+  )
+
+))}
   </div>
 )}
       <a onClick={(e) => {
@@ -200,7 +189,83 @@ const Hero = () => (
   </section>
 );
 
-const SpecializationBar = () => (
+const SpecializationBar = () => {
+    const [stats, setStats] = useState({
+    publishedAnalysis:0,
+    validated: 0,
+    invalidated: 0,
+    neutral: 0,
+    pending: 0,
+    validationAccuracy: "0%",
+    averageReactionRange: "0",
+  });
+
+  useEffect(() => {
+  async function fetchStats() {
+    const analysisSnapshot = await getDocs(collection(analysis, "analyses"));
+    const outcomeSnapshot = await getDocs(collection(outcome, "outcome"));
+
+    const analyses = analysisSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    const outcomes = outcomeSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    const validated = outcomes.filter(
+      (item: any) => item.validationStatus === "VALIDATED"
+    ).length;
+
+    const invalidated = outcomes.filter(
+      (item: any) => item.validationStatus === "INVALIDATED"
+    ).length;
+
+    const neutral = outcomes.filter(
+      (item: any) => item.validationStatus === "NEUTRAL"
+    ).length;
+
+    const pending = analyses.length - outcomes.length;
+
+    const validationAccuracy =
+      outcomes.length > 0
+        ? ((validated / outcomes.length) * 100).toFixed(1) + "%"
+        : "0%";
+
+    let totalReaction = 0;
+    let reactionCount = 0;
+
+    outcomes.forEach((item: any) => {
+      const match = item.reactionMagnitude?.match(/(\d+(\.\d+)?)/);
+
+      if (match) {
+        totalReaction += Number(match[1]);
+        reactionCount++;
+      }
+    });
+
+    const averageReactionRange =
+      reactionCount > 0
+        ? (totalReaction / reactionCount).toFixed(1)
+        : "0";
+
+    setStats({
+      publishedAnalysis: analyses.length,
+      validated,
+      invalidated,
+      neutral,
+      pending,
+      validationAccuracy,
+      averageReactionRange,
+    });
+  }
+
+  fetchStats();
+}, []);
+
+  return (
   <section className="px-6 -mt-20 relative z-20 pt-30 p-30">
     <div className="max-w-5xl mx-auto">
   <div className="terminal-panel p-10 md:p-14 w-full bg-panel/60 backdrop-blur-xl border border-accent/20 relative overflow-hidden">
@@ -224,7 +289,7 @@ const SpecializationBar = () => (
           Published Research
         </p>
         <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight">
-          {ANALYTICAL_PERFORMANCE.publishedAnalysis}
+          {stats.publishedAnalysis}
         </h2>
         
       </div>
@@ -237,7 +302,7 @@ const SpecializationBar = () => (
             Validated
           </p>
           <p className="text-2xl font-semibold text-emerald-400">
-            {ANALYTICAL_PERFORMANCE.validated}
+            {stats.validated}
           </p>
         </div>
 
@@ -246,7 +311,25 @@ const SpecializationBar = () => (
             Invalidated
           </p>
           <p className="text-2xl font-semibold text-red-400">
-            {ANALYTICAL_PERFORMANCE.invalidated}
+            {stats.invalidated}
+          </p>
+        </div>
+
+        <div className="bg-white/[0.02] border border-white/[0.05] p-5 rounded-xl">
+          <p className="text-[11px] uppercase tracking-widest text-white/80 mb-2">
+            Neutral
+          </p>
+          <p className="text-2xl font-semibold text-white-400">
+            {stats.neutral}
+          </p>
+        </div>
+
+        <div className="bg-white/[0.02] border border-white/[0.05] p-5 rounded-xl">
+          <p className="text-[11px] uppercase tracking-widest text-white/80 mb-2">
+            Pending
+          </p>
+          <p className="text-2xl font-semibold text-yellow-400">
+            {stats.pending}
           </p>
         </div>
 
@@ -255,7 +338,7 @@ const SpecializationBar = () => (
             Validation Rate
           </p>
           <p className="text-1xl font-bold text-white">
-            {ANALYTICAL_PERFORMANCE.validationAccuracy}
+            {stats.validationAccuracy}
           </p>
         </div>
         <div className="col-span-2 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/[0.05] p-6 rounded-xl flex items-center justify-between">
@@ -263,37 +346,77 @@ const SpecializationBar = () => (
             Average Reaction Range
           </p>
           <p className="text-3xl font-bold text-white">
-            {ANALYTICAL_PERFORMANCE.averageReactionRange}%
+            {stats.averageReactionRange}%
           </p>
         </div>
 
       </div>
     </div>
  <p className="text-xs uppercase tracking-[0.2em] text-white/80 pt-13">
-          Historical Research Archive
+          Historical Performance Archive
         </p>
-        <p className="text-text-s/60 italic pt-2">
-          complete analytical history and archived market frameworks maintained on X
-        </p>
-         <div className="flex flex-col sm:flex-row gap-10 pt-3">
-        <a 
-          href="https://x.com/ah_sanraza" 
-          className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
-          <div className="flex items-center gap-2 relative z-10">
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">View Full Archive</span>
-            <ArrowRight size={14} className="text-accent group-hover:translate-x-2 transition-transform duration-500" />
-          </div>
-        </a>
-      </div>
-  </div>
+       <p className="text-text-s/60 italic pt-2">
+  complete analytical history, validated outcomes, and archived market frameworks.
+</p>
+         <div className="flex flex-col sm:flex-row gap-6 pt-3">
 
+  <a 
+    href="/outcomes"
+    className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
+  >
+    <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
+
+    <div className="flex items-center gap-2 relative z-10">
+      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
+        View Outcome Archive
+      </span>
+
+      <ArrowRight 
+        size={14} 
+        className="text-accent group-hover:translate-x-2 transition-transform duration-500" 
+      />
+    </div>
+  </a>
+
+
+  <a 
+    href="https://x.com/ah_sanraza"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
+  >
+    <div className="flex items-center gap-2 relative z-10">
+        <Twitter 
+      size={18}
+      className="text-white group-hover:text-accent transition-colors duration-500"
+    />
+    </div>
+  </a>
+
+
+  <a 
+    href="https://instagram.com/ah-sanraza"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
+  >
+    <div className="flex items-center gap-2 relative z-10">
+       <Instagram 
+      size={18}
+      className="text-white group-hover:text-accent transition-colors duration-500"
+    />
+    </div>
+  </a>
+
+</div>
+
+    </div>
     </div>
     
     
   </section>
-);
+  );
+};
 
 const MarketGrid = () => {
 
@@ -450,7 +573,21 @@ return (
         </motion.div>
       ))}
     </div>
-    
+      <p className="text-xs uppercase tracking-[0.2em] text-white/80 pt-10">
+          Historical Research Archive
+        </p>
+        <div className="flex flex-col sm:flex-row gap-10 pt-3">
+        <a 
+          href="/analysis" 
+          className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
+          <div className="flex items-center gap-2 relative z-10">
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">View Full Archive</span>
+            <ArrowRight size={14} className="text-accent group-hover:translate-x-2 transition-transform duration-500" />
+          </div>
+        </a>
+      </div>
   </section>
 )};
 
@@ -626,19 +763,19 @@ return true;
                 <div className="grid grid-cols-4 gap-10 mb-12">
                   <div className="space-y-3">
                     <div className="text-[9px] uppercase tracking-[0.2em] text-text-s font-black">Initial Thesis</div>
-                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.initialforecast}</div>
+                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.initialForecast}</div>
                   </div>
                   <div className="space-y-3">
                     <div className="text-[9px] uppercase tracking-[0.2em] text-text-s font-black">Observed Delivery</div>
-                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.observedoutcome}</div>
+                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.observedOutcome}</div>
                   </div>
                   <div className="space-y-3">
                     <div className="text-[9px] uppercase tracking-[0.2em] text-text-s font-black">Validation Status</div>
-                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.validationstatus}</div>
+                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.validationStatus}</div>
                   </div>
                   <div className="space-y-4">
                     <div className="text-[9px] uppercase tracking-[0.2em] text-text-s font-black">Reaction Magnitude</div>
-                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.reactionmagnitude}</div>
+                    <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.reactionMagnitude}</div>
                   </div>
                 </div>
               </div>
@@ -652,7 +789,7 @@ return true;
         ))}
       </div>
        <p className="text-xs uppercase tracking-[0.2em] text-white/80 pt-10">
-          Historical Research Archive
+          Historical Outcome Archive
         </p>
         <div className="flex flex-col sm:flex-row gap-10 pt-3">
         <a 
