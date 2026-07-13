@@ -5,21 +5,46 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v5
+      - name: Setup Node
+        uses: actions/setup-node@v5
         with:
           node-version: 22
 
-      - run: npm install
-      - run: npm run build
+      - name: Install dependencies
+        run: npm install
 
-      - run: npm install -g vercel
+      - name: Build and prerender
+        run: npm run build
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Pull Vercel environment
+        run: |
+          vercel pull \
+          --yes \
+          --environment=production \
+          --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Vercel output
+        run: |
+          vercel build \
+          --prod \
+          --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy
-        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: |
+          vercel deploy \
+          --prebuilt \
+          --prod \
+          --token=${{ secrets.VERCEL_TOKEN }}
