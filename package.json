@@ -7,7 +7,7 @@
   "dev": "vite --port=3000 --host=0.0.0.0",
   "build": "vite build && start-server-and-test preview-server http://localhost:4173 prerender",
   "preview-server": "vite preview --host 0.0.0.0",
-  "prerender": "node scripts/prerender.js",
+  "prerender": "node --trace-uncaught scripts/prerender.js",
   "preview": "vite preview",
   "clean": "rm -rf dist",
   "lint": "tsc --noEmit"
