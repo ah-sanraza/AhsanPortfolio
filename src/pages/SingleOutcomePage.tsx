@@ -61,8 +61,8 @@ snapshot.docs.forEach((doc)=>{
 
   if (!outcome) {
     return (
-      <div className="text-white p-10">
-        Outcome not found
+      <div className="text-white p-20">
+        <h1>Outcome Awaited</h1>
       </div>
     );
   }

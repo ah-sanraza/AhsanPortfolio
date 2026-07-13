@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://theahsanraza.vercel.app/sitemap.xml
+
+LLMs-Txt: https://theahsanraza.vercel.app/llms.txt
