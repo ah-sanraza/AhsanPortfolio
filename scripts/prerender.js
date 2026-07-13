@@ -40,7 +40,7 @@ async function savePage(browser, route) {
 
 
   const page = await browser.newPage();
-  page.setDefaultNavigationTimeout(120000);
+  page.setDefaultNavigationTimeout(30000);
 
 
   await page.goto(
@@ -169,8 +169,12 @@ async function main(){
 
 
   const browser = await puppeteer.launch({
-    headless:true
-  });
+  headless: true,
+  args: [
+    "--no-sandbox",
+    "--disable-setuid-sandbox"
+  ]
+});
 
 
 
