@@ -22,9 +22,15 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
+        
+      - name: Clean build
+        run: rm -rf .vercel dist
+        
       - name: Build and prerender
         run: npm run build
+
+      - name: Check sitemap
+        run: cat dist/sitemap.xml
 
       - name: Install Vercel CLI
         run: npm install -g vercel
