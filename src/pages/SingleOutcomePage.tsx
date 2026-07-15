@@ -4,6 +4,7 @@ import { ArrowRight,ArrowUpRight } from "lucide-react";
 import {db} from "../firebase";
 import { useParams,Link } from "react-router-dom";
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
@@ -70,6 +71,34 @@ snapshot.docs.forEach((doc)=>{
 
  return (
   <>
+      <Helmet>
+      <title>
+        {outcome.pair} Outcome Validation | Ahsan Raza
+      </title>
+
+      <meta
+        name="description"
+        content={
+          outcome.description ||
+          `${outcome.pair} market outcome validation and analysis by Ahsan Raza.`
+        }
+      />
+
+      <meta
+        property="og:title"
+        content={`${outcome.pair} Outcome Validation | Ahsan Raza`}
+      />
+
+      <meta
+        property="og:description"
+        content={outcome.description}
+      />
+
+      <link
+        rel="canonical"
+        href={`https://ahsanraza.site/outcome/${slug}`}
+      />
+    </Helmet>
     <Navbar />
 
     <section

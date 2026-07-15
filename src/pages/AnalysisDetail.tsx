@@ -4,6 +4,7 @@ import { db } from "../firebase";
 import { Link } from "react-router-dom";
 import {ArrowDownRight,ArrowUpRight,} from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Helmet } from "react-helmet-async";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 export default function AnalysisPage() {
@@ -38,7 +39,33 @@ useEffect(() => {
 }, []);
 
   return (
-    <><Navbar/>
+    <>
+        <Helmet>
+  <title>
+    Crypto Market Analysis | Ahsan Raza
+  </title>
+
+  <meta
+    name="description"
+    content="Latest crypto market analysis, BTCUSD technical research, trading insights and market structure analysis by Ahsan Raza."
+  />
+
+  <meta
+    property="og:title"
+    content="Crypto Market Analysis | Ahsan Raza"
+  />
+
+  <meta
+    property="og:description"
+    content="Technical crypto analysis and market research archive."
+  />
+
+  <link
+    rel="canonical"
+    href="https://ahsanraza.site/analyses"
+  />
+</Helmet>
+    <Navbar/>
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 gap-10 py-24">
       {analyses.map((analysis) => (
         <motion.div 

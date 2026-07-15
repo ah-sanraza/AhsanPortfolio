@@ -4,6 +4,7 @@ import { db } from "../firebase";
 import { Link } from "react-router-dom";
 import {ArrowDownRight,ArrowUpRight,Filter} from 'lucide-react';
 import { motion} from 'motion/react';
+import { Helmet } from "react-helmet-async";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
@@ -47,7 +48,32 @@ export default function AnalysisPage() {
   }, [analyses, filter]);
 
  return (
-  <><Navbar/>
+  <>       <Helmet>
+      <title>
+        Market Research Archive | Analyses Page | Ahsan Raza
+      </title>
+    
+      <meta
+    name="description"
+    content="Explore Ahsan Raza's market analysis archive featuring BTCUSD technical research, crypto market structure analysis, trading insights, and historical market studies."
+  />
+
+  <meta
+    property="og:title"
+    content="Market Analysis Archive | Ahsan Raza"
+  />
+
+  <meta
+    property="og:description"
+    content="Browse technical crypto analysis, BTCUSD research, and market insights from Ahsan Raza's research archive."
+  />
+
+  <link
+    rel="canonical"
+    href="https://ahsanraza.site/analyses"
+  />
+</Helmet>
+  <Navbar/>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 gap-10 py-24">
            <h2 className="text-5xl font-serif font-bold italic tracking-tight text-white mt-10">Market Research</h2>
            

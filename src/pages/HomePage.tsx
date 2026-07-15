@@ -383,7 +383,7 @@ const SpecializationBar = () => {
     href="https://x.com/ah_sanraza"
     target="_blank"
     rel="noopener noreferrer"
-    className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
+    className="group relative w-fit px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
   >
     <div className="flex items-center gap-2 relative z-10">
         <Twitter 
@@ -398,7 +398,7 @@ const SpecializationBar = () => {
     href="https://instagram.com/ah-sanraza"
     target="_blank"
     rel="noopener noreferrer"
-    className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
+    className="group relative w-fit px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
   >
     <div className="flex items-center gap-2 relative z-10">
        <Instagram 

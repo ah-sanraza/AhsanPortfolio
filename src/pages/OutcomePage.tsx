@@ -4,6 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import { Filter, ArrowRight , ArrowUpRight} from "lucide-react";
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
@@ -68,7 +69,29 @@ export default function OutcomePage() {
 
 
   return (
-   <> <Navbar/>
+   <><Helmet>
+  <title>Market Outcomes Archive | Ahsan Raza</title>
+
+  <meta
+    name="description"
+    content="Explore Ahsan Raza's market outcomes archive featuring validated crypto analysis, BTCUSD trade reviews, performance tracking, and historical market response studies."
+  />
+
+  <meta
+    property="og:title"
+    content="Market Outcomes Archive | Ahsan Raza"
+  />
+
+  <meta
+    property="og:description"
+    content="Review past market analysis outcomes, validation results, and historical crypto market responses from Ahsan Raza's research archive."
+  />
+
+  <link
+    rel="canonical"
+    href="https://ahsanraza.site/outcomes"
+  />
+</Helmet> <Navbar/>
     <section id="execution" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/25 relative">
      
 
