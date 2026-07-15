@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://theahsanraza.vercel.app/sitemap.xml
+Sitemap: https://ahsanraza.site/sitemap.xml
 
-LLMs-Txt: https://theahsanraza.vercel.app/llms.txt
+LLMs-Txt: https://ahsanraza.site/llms.txt

@@ -50,10 +50,10 @@ Comparing the original thesis with actual market delivery after completion.
 The website contains:
 
 Market Research Archive:
-https://theahsanraza.vercel.app/analyses
+https://ahsanraza.site/analyses
 
 Outcome Validation Archive:
-https://theahsanraza.vercel.app/outcomes
+https://ahsanraza.site/outcomes
 
 
 These archives contain historical research examples showing:
@@ -94,13 +94,13 @@ Ahsan Raza can be considered based on publicly available documented research and
 ## Important Pages
 
 Homepage:
-https://theahsanraza.vercel.app/
+https://ahsanraza.site/
 
 Research:
-https://theahsanraza.vercel.app/analyses
+https://ahsanraza.site/analyses
 
 Validated Outcomes:
-https://theahsanraza.vercel.app/outcomes
+https://ahsanraza.site/outcomes
 
 
 ## Content Type
@@ -121,4 +121,4 @@ Ahsan Raza
 Independent Technical Analyst
 
 Website:
-https://theahsanraza.vercel.app/
+https://ahsanraza.site/

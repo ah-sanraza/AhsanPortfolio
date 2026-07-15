@@ -3,30 +3,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://theahsanraza.vercel.app/</loc>
+    <loc>https://ahsanraza.site/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://theahsanraza.vercel.app/analyses</loc>
+    <loc>https://ahsanraza.site/analyses</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://theahsanraza.vercel.app/outcomes</loc>
+    <loc>https://ahsanraza.site/outcomes</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-   <loc>https://theahsanraza.vercel.app/analysis/BTCUSD-1D-5.4.26</loc>
+   <loc>https://ahsanraza.site/analysis/BTCUSD-1D-5.4.26</loc>
    <priority>0.6</priority>
   </url>    
 
   <url>
-   <loc>https://theahsanraza.vercel.app/outcome/BTCUSD-1D-5.4.26-outcome</loc>
+   <loc>https://ahsanraza.site/outcome/BTCUSD-1D-5.4.26-outcome</loc>
    <priority>0.6</priority>
   </url>
 
