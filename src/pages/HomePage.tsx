@@ -944,7 +944,7 @@ const Contact = () => (
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-5xl">
         <a 
-          href="mailto:connect.ahsanraza@gmail.com" 
+          href="mailto:hello@ahsanraza.site" 
           className="flex-1 flex flex-col gap-8 p-12 terminal-panel hover:bg-white/[0.02] border-white/[0.05] hover:border-accent/40 transition-all duration-700 group relative"
         >
           {/* <div className="absolute top-4 right-4 text-[7px] font-mono opacity-20 group-hover:opacity-50 transition-opacity">CHNL_0x01</div> */}
@@ -953,7 +953,7 @@ const Contact = () => (
           </div>
           <div className="text-left">
             <div className="text-[10px] uppercase font-black tracking-[0.2em] text-text-s mb-3 group-hover:text-accent transition-colors">Research Communications</div>
-            <div className="font-serif text-1xl font-bold text-white tracking-tight">connect.ahsanraza@gmail.com</div>
+            <div className="font-serif text-1xl font-bold text-white tracking-tight">hello@ahsanraza.site</div>
           </div>
         </a>
         <a 
