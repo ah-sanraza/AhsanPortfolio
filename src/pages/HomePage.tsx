@@ -135,11 +135,11 @@ const Hero = () => (
     {/* Subtle Wave Animation */}
     <div className="absolute bottom-40 left-0 right-0 h-1 hidden lg:block opacity-20 -z-10">
       <div className="w-full h-full flex items-center justify-around">
-        {[...Array(40)].map((_, i) => (
+        {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
             animate={{ height: [8, 44, 8] }}
-            transition={{ duration: 3, repeat: Infinity, delay: i * 0.1, ease: "easeInOut" }}
+            transition={{ duration: 4, repeat: Infinity, delay: i * 0.1, ease: "easeInOut" }}
             className="w-0.5 bg-data-white"
           />
         ))}
@@ -149,13 +149,13 @@ const Hero = () => (
     <motion.div
       initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="max-w-5xl mx-auto text-center relative"
     >
       
       
       <h1 className="text-7xl md:text-[10rem] font-serif font-bold mb-4 tracking-[-0.04em] text-white leading-none selection:text-bg selection:bg-accent group">
-        <span className="inline-block hover:translate-x-2 transition-transform duration-700">Ahsan Raza</span>
+        <span className="inline-block hover:translate-x-2 transition-transform duration-300">Ahsan Raza</span>
       </h1>
       <div className="mb-10 flex flex-col items-center gap-4">
         <span className="text-accent text-[16px] font-serif font-bold uppercase tracking-[0.6em] ml-1">
@@ -179,7 +179,7 @@ const Hero = () => (
     <div className="absolute bottom-10 right-1/2 translate-x-1/2 flex flex-col items-center gap-4 text-text-s/30 transform group cursor-pointer hover:text-accent transition-colors">
        <div className="w-px h-12 bg-white/10 relative overflow-hidden">
           <motion.div 
-            animate={{ y: [-100, 100] }}
+            animate={{ y: [-60, 60] }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
             className="absolute inset-0 bg-accent w-full"
           />
@@ -364,7 +364,7 @@ const SpecializationBar = () => {
     href="/outcomes"
     className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
   >
-    <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
+    <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
 
     <div className="flex items-center gap-2 relative z-10">
       <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
@@ -581,7 +581,7 @@ return (
           href="/analysis" 
           className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
         >
-          <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
+          <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           <div className="flex items-center gap-2 relative z-10">
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">View Full Archive</span>
             <ArrowRight size={14} className="text-accent group-hover:translate-x-2 transition-transform duration-500" />
@@ -708,7 +708,7 @@ return true;
           <motion.div 
             whileHover={{ scale: 1.005 }}
             layout 
-            className="terminal-panel p-0 grid grid-cols-1 xl:grid-cols-12 overflow-hidden hover:border-accent/40 transition-all duration-700 shadow-accent/5"
+            className="terminal-panel p-0 grid grid-cols-1 xl:grid-cols-12 overflow-hidden hover:border-accent/40 transition-all duration-300 shadow-accent/5"
           >
             {/* Split Images Section */}
             <div className="xl:col-span-12 grid grid-cols-1 md:grid-cols-2 relative group-images">
@@ -796,7 +796,7 @@ return true;
           href="https://x.com/ah_sanraza" 
           className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
         >
-          <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
+          <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           <div className="flex items-center gap-2 relative z-10">
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">View Full Archive</span>
             <ArrowRight size={14} className="text-accent group-hover:translate-x-2 transition-transform duration-500" />
@@ -945,10 +945,10 @@ const Contact = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-5xl">
         <a 
           href="mailto:hello@ahsanraza.site" 
-          className="flex-1 flex flex-col gap-8 p-12 terminal-panel hover:bg-white/[0.02] border-white/[0.05] hover:border-accent/40 transition-all duration-700 group relative"
+          className="flex-1 flex flex-col gap-8 p-12 terminal-panel hover:bg-white/[0.02] border-white/[0.05] hover:border-accent/40 transition-all duration-300 group relative"
         >
           {/* <div className="absolute top-4 right-4 text-[7px] font-mono opacity-20 group-hover:opacity-50 transition-opacity">CHNL_0x01</div> */}
-          <div className="w-16 h-16 bg-panel/80 flex items-center justify-center border border-white/5 group-hover:border-accent/30 transition-all duration-700 shadow-xl">
+          <div className="w-16 h-16 bg-panel/80 flex items-center justify-center border border-white/5 group-hover:border-accent/30 transition-all duration-300 shadow-xl">
             <Mail size={28} className="text-accent group-hover:scale-110 transition-transform" />
           </div>
           <div className="text-left">
@@ -960,10 +960,10 @@ const Contact = () => (
           href="https://x.com/ah_sanraza" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="flex-1 flex flex-col gap-8 p-12 terminal-panel hover:bg-white/[0.02] border-white/[0.05] hover:border-accent/40 transition-all duration-700 group relative"
+          className="flex-1 flex flex-col gap-8 p-12 terminal-panel hover:bg-white/[0.02] border-white/[0.05] hover:border-accent/40 transition-all duration-300 group relative"
         >
           {/* <div className="absolute top-4 right-4 text-[7px] font-mono opacity-20 group-hover:opacity-50 transition-opacity">CHNL_0x02</div> */}
-          <div className="w-16 h-16 bg-panel/80 flex items-center justify-center border border-white/5 group-hover:border-accent/30 transition-all duration-700 shadow-xl">
+          <div className="w-16 h-16 bg-panel/80 flex items-center justify-center border border-white/5 group-hover:border-accent/30 transition-all duration-300 shadow-xl">
             <Twitter size={28} className="text-accent group-hover:scale-110 transition-transform" />
           </div>
           <div className="text-left">
