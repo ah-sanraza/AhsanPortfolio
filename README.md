@@ -2,7 +2,7 @@
   <img width="1200" height="475" alt="AR Portfolio Banner" src="src/assets/readme/ss_forreadme.png" />
 </div>
 
-# 📊 AR Portfolio Analyst
+# 📊 AR Analyst Portfolio
 
 A modern **portfolio analysis web** built with React and TypeScript.  
 It provides clean visualization and insights for tracking financial assets in a responsive dashboard UI.
