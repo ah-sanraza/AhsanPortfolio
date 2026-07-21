@@ -43,6 +43,7 @@ const Navbar = () => {
 
   <button
     onClick={() => setOpen(!open)}
+    aria-label={open ? "Close navigation menu" : "Open navigation menu"}
     className="md:hidden text-white"
   >
     {open ? <X size={20} /> : <Menu size={20} />}
@@ -383,6 +384,7 @@ const SpecializationBar = () => {
     href="https://x.com/ah_sanraza"
     target="_blank"
     rel="noopener noreferrer"
+    aria-label="Ahsan Raza on X"
     className="group relative w-fit px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
   >
     <div className="flex items-center gap-2 relative z-10">
@@ -398,6 +400,7 @@ const SpecializationBar = () => {
     href="https://instagram.com/ah-sanraza"
     target="_blank"
     rel="noopener noreferrer"
+    aria-label="Ahsan Raza on Instagram"
     className="group relative w-fit px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
   >
     <div className="flex items-center gap-2 relative z-10">
@@ -677,6 +680,7 @@ return true;
            <div className="flex items-center gap-4 px-6 py-3 border-r border-white/5">
              <Filter size={12} className="text-accent" />
              <select 
+               aria-label="Filter by asset type"
                className="bg-transparent text-[10px] uppercase tracking-[0.2em] text-white outline-none cursor-pointer text-text-s hover:text-accent transition-colors"
                onChange={(e) => setFilter(prev => ({ ...prev, asset: e.target.value || null }))}
              >
@@ -691,6 +695,7 @@ return true;
            <div className="flex items-center gap-4 px-6 py-3">
               <Filter size={12} className="text-accent" />
               <select 
+               aria-label="Filter by validation status"
                className="bg-transparent text-[10px] uppercase tracking-[0.2em] text-white outline-none cursor-pointer text-text-s hover:text-accent transition-colors"
                onChange={(e) => setFilter(prev => ({ ...prev, result: e.target.value || null }))}
              >
