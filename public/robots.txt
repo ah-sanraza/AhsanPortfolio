@@ -2,5 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ahsanraza.site/sitemap.xml
-
-LLMs-Txt: https://ahsanraza.site/llms.txt
