@@ -32,28 +32,5 @@ jobs:
       - name: Check sitemap
         run: cat dist/sitemap.xml
 
-      - name: Install Vercel CLI
-        run: npm install -g vercel
-
-      - name: Link Vercel Project
-        run: vercel link \--yes \--project ${{ secrets.VERCEL_PROJECT_ID }} \--token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Pull Vercel environment
-        run: |
-          vercel pull \
-          --yes \
-          --environment=production \
-          --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Build Vercel output
-        run: |
-          vercel build \
-          --prod \
-          --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Deploy
-        run: |
-          vercel deploy \
-          --prebuilt \
-          --prod \
-          --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy to Vercel
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
