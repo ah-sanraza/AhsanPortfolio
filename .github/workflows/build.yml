@@ -33,4 +33,4 @@ jobs:
         run: cat dist/sitemap.xml
 
       - name: Deploy to Vercel
-        run: npx vercel --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --project ${{ secrets.VERCEL_PROJECT_ID }} --yes
+        run: npx vercel deploy --prod --local-config vercel.json --token=${{ secrets.VERCEL_TOKEN }} --yes
