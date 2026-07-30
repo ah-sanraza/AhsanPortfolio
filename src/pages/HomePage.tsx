@@ -347,8 +347,7 @@ const SpecializationBar = () => {
        <p className="text-text-s/60 italic pt-2">
   complete analytical history, validated outcomes, and archived market frameworks.
 </p>
-         <div className="flex flex-row gap-3 pt-3">
-
+     <div className="flex flex-row gap-3 pt-3 whitespace-nowrap">
   <a 
     href="/outcomes"
     className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
@@ -361,23 +360,23 @@ const SpecializationBar = () => {
       </span>
 
       <ArrowRight 
-        size={14} 
+        size={16} 
         className="text-accent group-hover:translate-x-2 transition-transform duration-500" 
       />
     </div>
   </a>
 
-
+<div className="flex gap-4">
   <a 
     href="https://x.com/ah_sanraza"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Ahsan Raza on X"
-    className="group relative w-fit px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
+    className="group relative w-14 h-14 flex items-center justify-center bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
   >
     <div className="flex items-center gap-2 relative z-10">
         <Twitter 
-      size={18}
+      size={20}
       className="text-white group-hover:text-accent transition-colors duration-500"
     />
     </div>
@@ -389,16 +388,16 @@ const SpecializationBar = () => {
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Ahsan Raza on Instagram"
-    className="group relative w-fit px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
+    className="group relative w-14 h-14 flex items-center justify-center bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
   >
     <div className="flex items-center gap-2 relative z-10">
        <Instagram 
-      size={18}
+      size={20}
       className="text-white group-hover:text-accent transition-colors duration-500"
     />
     </div>
   </a>
-
+</div>
 </div>
 
     </div>
