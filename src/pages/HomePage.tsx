@@ -347,7 +347,7 @@ const SpecializationBar = () => {
        <p className="text-text-s/60 italic pt-2">
   complete analytical history, validated outcomes, and archived market frameworks.
 </p>
-     <div className="flex flex-row gap-3 pt-3 whitespace-nowrap">
+     <div className="flex flex-col gap-3 pt-3">
   <a 
     href="/outcomes"
     className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
