@@ -133,19 +133,7 @@ const Hero = () => (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-accent/[0.03] rounded-full blur-[150px] -z-20 pointer-events-none" />
     <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-bg to-transparent pointer-events-none -z-10" />
     
-    {/* Subtle Wave Animation */}
-    <div className="absolute bottom-40 left-0 right-0 h-1 hidden lg:block opacity-20 -z-10">
-      <div className="w-full h-full flex items-center justify-around">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{ height: [8, 44, 8] }}
-            transition={{ duration: 4, repeat: Infinity, delay: i * 0.1, ease: "easeInOut" }}
-            className="w-0.5 bg-data-white"
-          />
-        ))}
-      </div>
-    </div>
+   
 
     <motion.div
       initial={{ opacity: 0, scale: 0.98 }}
@@ -269,7 +257,7 @@ const SpecializationBar = () => {
   return (
   <section className="px-6 -mt-20 relative z-20 pt-30 p-30">
     <div className="max-w-5xl mx-auto">
-  <div className="terminal-panel p-10 md:p-14 w-full bg-panel/60 backdrop-blur-xl border border-accent/20 relative overflow-hidden">
+  <div className="p-10 md:p-14 w-full bg-panel/60 backdrop-blur-xl border border-accent relative overflow-hidden rounded-2xl">
     
     {/* subtle glow */}
     <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.05] to-transparent pointer-events-none" />
@@ -298,7 +286,7 @@ const SpecializationBar = () => {
       {/* secondary stats */}
       <div className="grid grid-cols-2 gap-6">
 
-        <div className="bg-white/[0.02] border border-white/[0.05] p-5 rounded-xl">
+        <div className="bg-white/[0.02] border border-accent/50 p-5 rounded-xl">
           <p className="text-[11px] uppercase tracking-widest text-white/80 mb-2">
             Validated
           </p>
@@ -307,7 +295,7 @@ const SpecializationBar = () => {
           </p>
         </div>
 
-        <div className="bg-white/[0.02] border border-white/[0.05] p-5 rounded-xl">
+        <div className="bg-white/[0.02] border border-accent/50 p-5 rounded-xl">
           <p className="text-[11px] uppercase tracking-widest text-white/80 mb-2">
             Invalidated
           </p>
@@ -316,7 +304,7 @@ const SpecializationBar = () => {
           </p>
         </div>
 
-        <div className="bg-white/[0.02] border border-white/[0.05] p-5 rounded-xl">
+        <div className="bg-white/[0.02] border border-accent/50 p-5 rounded-xl">
           <p className="text-[11px] uppercase tracking-widest text-white/80 mb-2">
             Neutral
           </p>
@@ -325,7 +313,7 @@ const SpecializationBar = () => {
           </p>
         </div>
 
-        <div className="bg-white/[0.02] border border-white/[0.05] p-5 rounded-xl">
+        <div className="bg-white/[0.02] border border-accent/50 p-5 rounded-xl">
           <p className="text-[11px] uppercase tracking-widest text-white/80 mb-2">
             Pending
           </p>
@@ -334,7 +322,7 @@ const SpecializationBar = () => {
           </p>
         </div>
 
-        <div className="col-span-2 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/[0.05] p-6 rounded-xl flex items-center justify-between">
+        <div className="col-span-2 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-accent/50 p-6 rounded-xl flex items-center justify-between">
           <p className="text-[11px] uppercase tracking-widest text-white/80">
             Validation Rate
           </p>
@@ -342,7 +330,7 @@ const SpecializationBar = () => {
             {stats.validationAccuracy}
           </p>
         </div>
-        <div className="col-span-2 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/[0.05] p-6 rounded-xl flex items-center justify-between">
+        <div className="col-span-2 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-accent/50 p-6 rounded-xl flex items-center justify-between">
           <p className="text-[11px] uppercase tracking-widest text-white/80">
             Average Reaction Range
           </p>
@@ -475,7 +463,7 @@ return (
         <motion.div 
           whileHover={{ y: -8 }}
           key={item.id} 
-          className="terminal-panel grid grid-cols-1 xl:grid-cols-12 overflow-hidden group transition-all duration-500 hover:border-accent/30">
+          className="terminal-panel grid grid-cols-1 xl:grid-cols-12 overflow-hidden group transition-all duration-500 hover:border-accent">
           <div className="xl:col-span-12 aspect-video xl:aspect-auto relative overflow-hidden bg-muted"><a
   href={item.imageurl}
   target="_blank"
@@ -826,7 +814,7 @@ const InsightsSection = () => (
   </div>
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
       {INSIGHTS.map((insight, i) => (
-        <div key={i} className="terminal-panel p-12 hover:border-accent/40 transition-all duration-500 flex flex-col justify-between h-full group bg-gradient-to-b from-panel/30 to-bg/10">
+       <div key={i} className="terminal-panel p-12 border-2 border-white/[0.12] hover:border-accent/60 transition-all duration-500 flex flex-col justify-between h-full group bg-gradient-to-b from-panel/30 to-bg/10">
           <div>
             <div className="flex justify-between items-center mb-10">
               <div className="px-3 py-1 border border-white/10 text-[8px] font-mono text-accent uppercase tracking-widest bg-white/[0.02]">
