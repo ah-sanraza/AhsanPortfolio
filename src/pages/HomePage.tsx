@@ -350,11 +350,11 @@ const SpecializationBar = () => {
      <div className="flex flex-col gap-3 pt-3">
   <a 
     href="/outcomes"
-    className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
+    className="group relative w-full px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
   >
     <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
 
-    <div className="flex items-center gap-2 relative z-10">
+    <div className="flex items-center justify-between w-full relative z-10">
       <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
         View Outcome Archive
       </span>
