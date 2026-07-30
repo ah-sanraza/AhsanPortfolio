@@ -347,7 +347,7 @@ const SpecializationBar = () => {
        <p className="text-text-s/60 italic pt-2">
   complete analytical history, validated outcomes, and archived market frameworks.
 </p>
-         <div className="flex flex-col sm:flex-row gap-6 pt-3">
+         <div className="flex flex-row gap-3 pt-3">
 
   <a 
     href="/outcomes"
