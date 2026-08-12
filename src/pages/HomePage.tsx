@@ -34,7 +34,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   return(
   <nav className="fixed top-0 left-0 right-0 z-[60] border-b border-white/[0.03] bg-bg/95 backdrop-blur-md">
-    <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between min-w-0">
        {/* Mobile Toggle Button */}
     <div className="flex items-center gap-4">
 
@@ -143,16 +143,16 @@ const Hero = () => (
     >
       
       
-      <h1 className="text-7xl md:text-[10rem] font-serif font-bold mb-4 tracking-[-0.04em] text-white leading-none selection:text-bg selection:bg-accent group">
+      <h1 className="text-[clamp(3.5rem,15vw,10rem)] font-serif font-bold mb-4 tracking-[-0.04em] text-white leading-none ...">
         <span className="inline-block hover:translate-x-2 transition-transform duration-300">Ahsan Raza</span>
       </h1>
       <div className="mb-10 flex flex-col items-center gap-4">
-        <span className="text-accent text-[16px] font-serif font-bold uppercase tracking-[0.6em] ml-1">
+        <span className="text-accent text-[11px] sm:text-[16px] font-serif font-bold uppercase tracking-[0.25em] sm:tracking-[0.6em] ml-0 sm:ml-1 max-w-full px-4 leading-relaxed">
          Independent Technical Analyst
         </span>
       </div>
       <div className="mt-8 mb-16 space-y-4">
-       <p className="text-2xl md:text-4xl text-text-s/80 font-serif italic tracking-tight flex items-center justify-center gap-3">
+       <p className="text-xl sm:text-2xl md:text-4xl text-text-s/80 font-serif italic tracking-tight flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-4">
           <span>Liquidity</span>
           <div className="w-1.5 h-1.5 rounded-full bg-accent/70 shadow-[0_0_10px_rgba(0,0,0,0.3)]" />
           <span>Structure</span>
@@ -165,7 +165,7 @@ const Hero = () => (
       </div>
     </motion.div>
 
-    <div className="absolute bottom-10 right-1/2 translate-x-1/2 flex flex-col items-center gap-4 text-text-s/30 transform group cursor-pointer hover:text-accent transition-colors">
+    <div className="absolute bottom-6 sm:bottom-10 left-4 right-4 flex flex-col items-center gap-4 text-text-s/30 transform group cursor-pointer hover:text-accent transition-colors text-center">
        <div className="w-px h-12 bg-white/10 relative overflow-hidden">
           <motion.div 
             animate={{ y: [-60, 60] }}
@@ -173,7 +173,7 @@ const Hero = () => (
             className="absolute inset-0 bg-accent w-full"
           />
        </div>
-       <span className="text-[14px] text-text-s/90 font-bold uppercase">Publishing structured market research with post analysis validation</span>
+       <span className="text-[9px] sm:text-[14px] text-text-s/90 font-bold uppercase leading-relaxed max-w-3xl">Publishing structured market research with post analysis validation</span>
     </div>
   </section>
 );
@@ -255,9 +255,9 @@ const SpecializationBar = () => {
 }, []);
 
   return (
-  <section className="px-6 -mt-20 relative z-20 pt-30 p-30">
+  <section className="px-4 sm:px-6 -mt-10 sm:-mt-20 relative z-20 pt-16 sm:pt-30">
     <div className="max-w-5xl mx-auto">
-  <div className="p-10 md:p-14 w-full bg-panel/60 backdrop-blur-xl border border-accent relative overflow-hidden rounded-2xl">
+  <div className="p-3 sm:p-5 sm:p-8 md:p-14 w-full min-w-0 bg-panel/60 backdrop-blur-xl border border-accent relative overflow-hidden rounded-2xl">
     
     {/* subtle glow */}
     <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.05] to-transparent pointer-events-none" />
@@ -270,7 +270,7 @@ const SpecializationBar = () => {
     </div>
 
     {/* main stats */}
-    <div className="grid md:grid-cols-2 gap-10 relative z-10">
+    <div className="grid md:grid-cols-2 gap-6 sm:gap-10 relative z-10 min-w-0">
 
       {/* big primary stat */}
       <div className="space-y-2">
@@ -284,9 +284,9 @@ const SpecializationBar = () => {
       </div>
 
       {/* secondary stats */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-3 sm:gap-6 min-w-0">
 
-        <div className="bg-white/[0.02] border border-accent/50 p-5 rounded-xl">
+        <div className="bg-white/[0.02] border border-accent/50 p-3 sm:p-5 rounded-xl">
           <p className="text-[11px] uppercase tracking-widest text-white/80 mb-2">
             Validated
           </p>
@@ -295,7 +295,7 @@ const SpecializationBar = () => {
           </p>
         </div>
 
-        <div className="bg-white/[0.02] border border-accent/50 p-5 rounded-xl">
+        <div className="bg-white/[0.02] border border-accent/50 p-3 sm:p-5 rounded-xl">
           <p className="text-[11px] uppercase tracking-widest text-white/80 mb-2">
             Invalidated
           </p>
@@ -304,7 +304,7 @@ const SpecializationBar = () => {
           </p>
         </div>
 
-        <div className="bg-white/[0.02] border border-accent/50 p-5 rounded-xl">
+        <div className="bg-white/[0.02] border border-accent/50 p-3 sm:p-5 rounded-xl">
           <p className="text-[11px] uppercase tracking-widest text-white/80 mb-2">
             Neutral
           </p>
@@ -313,7 +313,7 @@ const SpecializationBar = () => {
           </p>
         </div>
 
-        <div className="bg-white/[0.02] border border-accent/50 p-5 rounded-xl">
+        <div className="bg-white/[0.02] border border-accent/50 p-3 sm:p-5 rounded-xl">
           <p className="text-[11px] uppercase tracking-widest text-white/80 mb-2">
             Pending
           </p>
@@ -322,7 +322,7 @@ const SpecializationBar = () => {
           </p>
         </div>
 
-        <div className="col-span-2 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-accent/50 p-6 rounded-xl flex items-center justify-between">
+        <div className="col-span-2 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-accent/50 p-4 sm:p-6 rounded-xl flex items-center justify-between">
           <p className="text-[11px] uppercase tracking-widest text-white/80">
             Validation Rate
           </p>
@@ -330,11 +330,11 @@ const SpecializationBar = () => {
             {stats.validationAccuracy}
           </p>
         </div>
-        <div className="col-span-2 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-accent/50 p-6 rounded-xl flex items-center justify-between">
+        <div className="col-span-2 bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-accent/50 p-4 sm:p-6 rounded-xl flex items-center justify-between">
           <p className="text-[11px] uppercase tracking-widest text-white/80">
             Average Reaction Range
           </p>
-          <p className="text-3xl font-bold text-white">
+          <p className="text-2xl font-bold text-white">
             {stats.averageReactionRange}%
           </p>
         </div>
@@ -447,7 +447,7 @@ return (
   <section id="analysis" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/25 relative">
     <div className="flex flex-col md:flex-row items-baseline justify-between mb-12 gap-10">
       <div>
-        <h2 className="text-5xl font-serif font-bold italic mb-6 tracking-tight text-white">Market Research</h2>
+        <h2 className="text-4xl sm:text-5xl font-serif font-bold italic mb-6 tracking-tight text-white">Market Research</h2>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-accent" />
@@ -568,7 +568,7 @@ return (
         </p>
         <div className="flex flex-col sm:flex-row gap-10 pt-3">
         <a 
-          href="/analysis" 
+          href="/analyses" 
           className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
         >
           <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
@@ -656,7 +656,7 @@ return true;
 
       <div className="flex flex-col lg:flex-row items-baseline justify-between mb-24 gap-12">
         <div>
-          <h2 className="text-5xl font-serif font-bold italic mb-6 tracking-tight text-white">Outcome Validation</h2>
+          <h2 className="text-4xl sm:text-5xl font-serif font-bold italic mb-6 tracking-tight text-white">Outcome Validation</h2>
           <div className="flex items-center gap-4">
             <div className="w-2 h-2 bg-accent" />
             <span className="text-text-s text-[12px] uppercase tracking-[0.1em] text-white">post publication validation of market behavior against the original research.</span>
@@ -752,7 +752,7 @@ return true;
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-10 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 mb-12">
                   <div className="space-y-3">
                     <div className="text-[9px] uppercase tracking-[0.2em] text-text-s font-black">Initial Thesis</div>
                     <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.initialForecast}</div>
@@ -984,7 +984,7 @@ const Contact = () => (
 
 export default function App() {
   return (
-    <div className="min-h-screen selection:bg-accent/30 selection:text-white">
+    <div className="min-h-screen overflow-x-hidden selection:bg-accent/30 selection:text-white">
       <Navbar />
       <main>
         <Hero />

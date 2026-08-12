@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Helmet } from "react-helmet-async";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+
 export default function AnalysisPage() {
   const [analyses, setAnalyses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
