@@ -11,27 +11,48 @@ export default function CursorTrail() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    // Disable completely on mobile / touch devices
+    const isMobile =
+      window.innerWidth < 768 ||
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0;
+
+    if (isMobile) return;
+
     let id = 0;
-    let animationFrame: number;
+    let animationFrame: number | null = null;
+    let hideTimeout: ReturnType<typeof setTimeout> | null = null;
 
     const handleMove = (e: MouseEvent) => {
+      // Safety: ignore any non-mouse event
+      if (e.pointerType === "touch") return;
+
+      if (hideTimeout) {
+        clearTimeout(hideTimeout);
+      }
+
       const targetX = e.clientX;
       const targetY = e.clientY;
 
-      cancelAnimationFrame(animationFrame);
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
 
       const animate = () => {
         setPos((prev) => {
           const x = prev.x + (targetX - prev.x) * 0.15;
           const y = prev.y + (targetY - prev.y) * 0.15;
 
-          const newStar = {
+          const newStar: Star = {
             id: id++,
             x,
             y,
           };
 
-          setStars((stars) => [...stars.slice(-20), newStar]);
+          setStars((prevStars) => [
+            ...prevStars.slice(-20),
+            newStar,
+          ]);
 
           return { x, y };
         });
@@ -40,15 +61,41 @@ export default function CursorTrail() {
       };
 
       animate();
+
+      // Hide trail 1 second after mouse stops
+      hideTimeout = setTimeout(() => {
+        setStars([]);
+        if (animationFrame) {
+          cancelAnimationFrame(animationFrame);
+          animationFrame = null;
+        }
+      }, 1000);
     };
 
     window.addEventListener("mousemove", handleMove);
 
     return () => {
       window.removeEventListener("mousemove", handleMove);
-      cancelAnimationFrame(animationFrame);
+
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+
+      if (hideTimeout) {
+        clearTimeout(hideTimeout);
+      }
     };
   }, []);
+
+  // Don't render anything on mobile
+  if (
+    typeof window !== "undefined" &&
+    (window.innerWidth < 768 ||
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0)
+  ) {
+    return null;
+  }
 
   return (
     <>
@@ -59,7 +106,8 @@ export default function CursorTrail() {
           style={{
             left: star.x,
             top: star.y,
-            animation: "starFade 900ms cubic-bezier(.22,1,.36,1) forwards",
+            animation:
+              "starFade 900ms cubic-bezier(.22,1,.36,1) forwards",
           }}
         >
           ✦
