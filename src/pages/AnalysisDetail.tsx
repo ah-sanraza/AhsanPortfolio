@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Helmet } from "react-helmet-async";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
+import SocialShareButton from "../components/SocialShareButton";
 
 export default function AnalysisPage() {
   const [analyses, setAnalyses] = useState<any[]>([]);
@@ -41,31 +42,101 @@ useEffect(() => {
 
   return (
     <>
-        <Helmet>
-  <title>
-    Crypto Market Analysis | Ahsan Raza
-  </title>
+{!loading && analyses.length > 0 && (() => {
+  const analysis = analyses[0];
 
-  <meta
-    name="description"
-    content="Latest crypto market analysis, BTCUSD technical research, trading insights and market structure analysis by Ahsan Raza."
-  />
+  const imageUrl = (() => {
+    const source = analysis.imageurl || "";
 
-  <meta
-    property="og:title"
-    content="Crypto Market Analysis | Ahsan Raza"
-  />
+    if (source.includes("s3.tradingview.com/snapshots/")) {
+      return source;
+    }
 
-  <meta
-    property="og:description"
-    content="Technical crypto analysis and market research archive."
-  />
+    const match = source.match(/\/x\/([^/?#]+)/);
 
-  <link
-    rel="canonical"
-    href="https://ahsanraza.site/analyses"
-  />
-</Helmet>
+    if (match?.[1]) {
+      const id = match[1];
+
+      return `https://s3.tradingview.com/snapshots/${id.charAt(0)}/${id}.png`;
+    }
+
+    return source;
+  })();
+
+  const title =
+    analysis.title ||
+    analysis.pair ||
+    "Ahsan Raza";
+
+  const canonicalUrl =
+    `https://ahsanraza.site/analysis/${analysis.slug}`;
+
+  return (
+    <Helmet>
+      <title>{title} | Ahsan Raza</title>
+
+      <meta
+        id="analysis-og-type"
+        property="og:type"
+        content="article"
+      />
+
+      <meta
+        id="analysis-og-title"
+        property="og:title"
+        content={title}
+      />
+
+      <meta
+        id="analysis-og-image"
+        property="og:image"
+        content={imageUrl}
+      />
+
+      <meta
+        id="analysis-og-image-width"
+        property="og:image:width"
+        content="1200"
+      />
+
+      <meta
+        id="analysis-og-image-height"
+        property="og:image:height"
+        content="630"
+      />
+
+      <meta
+        id="analysis-og-url"
+        property="og:url"
+        content={canonicalUrl}
+      />
+
+      <meta
+        id="analysis-twitter-card"
+        name="twitter:card"
+        content="summary_large_image"
+      />
+
+      <meta
+        id="analysis-twitter-title"
+        name="twitter:title"
+        content={title}
+      />
+
+      <meta
+        id="analysis-twitter-image"
+        name="twitter:image"
+        content={imageUrl}
+      />
+
+      <link
+        id="analysis-canonical"
+        rel="canonical"
+        href={canonicalUrl}
+      />
+    </Helmet>
+  );
+})()}
     <Navbar/>
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 gap-10 py-24">
       {analyses.map((analysis) => (
@@ -162,6 +233,14 @@ useEffect(() => {
                   <div className="text-1xl text-red-400 italic leading-[1.2] font-bold tracking-tight">{analysis.disclaimer}</div>
                 </div>
              </div>
+             <SocialShareButton
+  type="research"
+  image={analysis.imageurl}
+  title={analysis.title}
+  description={analysis.description || ""}
+  disclaimer={analysis.disclaimer || ""}
+  url={`https://ahsanraza.site/analysis/${analysis.slug}`}
+/>
               <button className="flex items-center justify-between group/link w-full text-left pt-2">
                 <div className="flex items-center gap-3">
                    <div className="w-6 h-0.5 bg-accent/20 transition-all duration-500 group-hover/link:w-12 group-hover/link:bg-accent/60" />

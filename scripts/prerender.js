@@ -31,33 +31,68 @@ const BASE_URL = "http://localhost:4173";
 
 // dist folder
 const DIST_DIR = path.resolve(__dirname, "../dist");
-
-
-// Save rendered HTML
 async function savePage(browser, route) {
-
   console.log("Rendering:", route);
 
-
   const page = await browser.newPage();
-  page.setDefaultNavigationTimeout(30000);
 
+  page.setDefaultNavigationTimeout(60000);
 
-  await page.goto(
-  `${BASE_URL}${route}`,
-  {
-    waitUntil: "domcontentloaded",
+  await page.goto(`${BASE_URL}${route}`, {
+    waitUntil: "networkidle2",
     timeout: 60000
+  });
+
+  // Wait for Firebase + React content
+  try {
+    await page.waitForFunction(
+      () => {
+        const bodyText = document.body?.innerText || "";
+
+        return (
+          bodyText.length > 100 &&
+          !bodyText.toLowerCase().includes("loading...")
+        );
+      },
+      {
+        timeout: 30000
+      }
+    );
+  } catch {
+    console.log(
+      "Content wait timeout, saving current HTML:",
+      route
+    );
   }
-);
 
+  // IMPORTANT:
+  // Give react-helmet-async time to update <head>
+  await new Promise(resolve => setTimeout(resolve, 2000));
 
-  // Give React/Firebase extra time
-  await new Promise(resolve => setTimeout(resolve, 3000));
+  // Debug: check what Helmet actually generated
+  const metaDebug = await page.evaluate(() => ({
+    title: document.title,
 
+    ogImage: document.querySelector(
+      'meta[property="og:image"]'
+    )?.getAttribute("content"),
+
+    twitterImage: document.querySelector(
+      'meta[name="twitter:image"]'
+    )?.getAttribute("content"),
+
+    ogTitle: document.querySelector(
+      'meta[property="og:title"]'
+    )?.getAttribute("content"),
+
+    twitterCard: document.querySelector(
+      'meta[name="twitter:card"]'
+    )?.getAttribute("content")
+  }));
+
+  console.log("META:", route, metaDebug);
 
   const html = await page.content();
-
 
   const folder = path.join(
     DIST_DIR,
@@ -66,21 +101,17 @@ async function savePage(browser, route) {
       : route
   );
 
-
   fs.mkdirSync(folder, {
-    recursive:true
+    recursive: true
   });
-
 
   fs.writeFileSync(
     path.join(folder, "index.html"),
     html
   );
 
-
   await page.close();
 }
-
 
 // Fetch routes from Firebase
 async function getRoutes(){

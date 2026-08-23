@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/((?!outcome|analysis|analyses|assets).*)",
+      "source": "/((?!api|outcome|analysis|analyses|assets).*)",
       "destination": "/index.html"
     }
   ]
