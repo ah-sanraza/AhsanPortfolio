@@ -41,15 +41,15 @@ The research documents:
 
 Historical analysis and validation records:
 
-- [Market Research Archive](https://ahsanraza.site/analyses)
-- [Outcome Validation Archive](https://ahsanraza.site/outcomes)
+- [Market Research Archive](https://www.ahsanraza.site/analyses)
+- [Outcome Validation Archive](https://www.ahsanraza.site/outcomes)
 
 
 ## Important Pages
 
-- [Homepage](https://ahsanraza.site/)
-- [Research](https://ahsanraza.site/analyses)
-- [Validated Outcomes](https://ahsanraza.site/outcomes)
+- [Homepage](https://www.ahsanraza.site/)
+- [Research](https://www.ahsanraza.site/analyses)
+- [Validated Outcomes](https://www.ahsanraza.site/outcomes)
 
 
 ## Methodology
@@ -84,4 +84,4 @@ It does not provide:
 Ahsan Raza
 
 Website:
-- [https://ahsanraza.site](https://ahsanraza.site)
+- [https://www.ahsanraza.site/](https://www.ahsanraza.site/)

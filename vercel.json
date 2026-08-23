@@ -1,7 +1,11 @@
 {
   "rewrites": [
     {
-      "source": "/((?!outcome|analysis|analyses|assets).*)",
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap"
+    },
+    {
+      "source": "/((?!outcome|analysis|analyses|assets|sitemap.xml).*)",
       "destination": "/index.html"
     }
   ]
