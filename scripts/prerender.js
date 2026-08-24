@@ -116,31 +116,20 @@ async function getRoutes(){
 
 
   // outcomes
-  const outcomeSnap = await getDocs(
-    collection(db,"outcome")
-  );
-  console.log(
-  "Total outcomes:",
-  outcomeSnap.size
+ const outcomeSnap = await getDocs(
+  collection(db, "outcome")
 );
-  outcomeSnap.forEach(doc=>{
-      console.log(
-    "Outcome:",
-    doc.id,
-    doc.data()
-  );
 
-    const data = doc.data();
+console.log("Total published outcomes:", outcomeSnap.size);
 
-    if(data.slug){
+outcomeSnap.forEach((doc) => {
+  const data = doc.data();
 
-      routes.push(
-        `/outcome/${data.slug}`
-      );
+  if (!data.slug) return;
 
-    }
+  routes.push(`/outcome/${data.slug}`);
+});
 
-  });
 
 
 

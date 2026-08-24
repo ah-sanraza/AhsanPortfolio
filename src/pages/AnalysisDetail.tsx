@@ -18,19 +18,36 @@ useEffect(() => {
     const slug = window.location.pathname.split("/").pop();
 
     const q = query(
-      collection(db, "analyses"),
-      where("slug", "==", slug)
-    );
+  collection(db, "analyses"),
+  where("slug", "==", slug)
+);
 
-    const snapshot = await getDocs(q);
+const snapshot = await getDocs(q);
 
+// Get published outcomes
+const outcomesSnapshot = await getDocs(
+  collection(db, "outcome")
+);
 
-    const data = snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
+const publishedOutcomeSlugs = new Set(
+  outcomesSnapshot.docs
+    .map((doc) => doc.data().slug)
+    .filter(Boolean)
+);
 
-    setAnalyses(data);
+const data = snapshot.docs.map((doc) => {
+  const analysis: any = {
+    id: doc.id,
+    ...doc.data(),
+  };
+
+  return {
+    ...analysis,
+    hasPublishedOutcome: publishedOutcomeSlugs.has(analysis.outcomeSlug),
+  };
+});
+
+setAnalyses(data);
     setLoading(false);
   }
 
@@ -162,13 +179,31 @@ useEffect(() => {
                   <div className="text-1xl text-red-400 italic leading-[1.2] font-bold tracking-tight">{analysis.disclaimer}</div>
                 </div>
              </div>
-              <button className="flex items-center justify-between group/link w-full text-left pt-2">
-                <div className="flex items-center gap-3">
-                   <div className="w-6 h-0.5 bg-accent/20 transition-all duration-500 group-hover/link:w-12 group-hover/link:bg-accent/60" />
-                   <Link to={`/outcome/${analysis.outcomeSlug}`} className="text-[10px] uppercase tracking-[0.2em] font-black text-text-s group-hover/link:text-accent transition-colors">View Outcome</Link>
-                </div>
-                <Link to={`/outcome/${analysis.outcomeSlug}`} className="text-[10px] uppercase tracking-[0.2em] font-black text-text-s group-hover/link:text-accent transition-colors"><ArrowUpRight size={14} className="text-text-s group-hover/link:text-accent transition-all duration-500" /></Link>
-             </button>
+{analysis.hasPublishedOutcome && (
+  <button className="flex items-center justify-between group/link w-full text-left pt-2">
+    <div className="flex items-center gap-3">
+      <div className="w-6 h-0.5 bg-accent/20 transition-all duration-500 group-hover/link:w-12 group-hover/link:bg-accent/60" />
+
+      <Link
+        to={`/outcome/${analysis.outcomeSlug}`}
+        className="text-[10px] uppercase tracking-[0.2em] font-black text-text-s group-hover/link:text-accent transition-colors"
+      >
+        View Outcome
+      </Link>
+    </div>
+
+    <Link
+      to={`/outcome/${analysis.outcomeSlug}`}
+      className="text-[10px] uppercase tracking-[0.2em] font-black text-text-s group-hover/link:text-accent transition-colors"
+    >
+      <ArrowUpRight
+        size={14}
+        className="text-text-s group-hover/link:text-accent transition-all duration-500"
+      />
+    </Link>
+  </button>
+)}
+
           </div>
         </motion.div>
           ))}
