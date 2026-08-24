@@ -148,7 +148,7 @@ const Hero = () => (
       </h1>
       <div className="mb-10 flex flex-col items-center gap-4">
         <span className="text-accent text-[11px] sm:text-[16px] font-serif font-bold uppercase tracking-[0.25em] sm:tracking-[0.6em] ml-0 sm:ml-1 max-w-full px-4 leading-relaxed">
-         Independent Technical Analyst
+         Independent Technical Analyst for Global Markets
         </span>
       </div>
       <div className="mt-8 mb-16 space-y-4">
