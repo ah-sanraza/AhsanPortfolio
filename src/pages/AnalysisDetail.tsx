@@ -80,7 +80,7 @@ setAnalyses(data);
 
   <link
     rel="canonical"
-    href="https://ahsanraza.site/analyses"
+    href="https://www.ahsanraza.site/analyses"
   />
 </Helmet>
     <Navbar/>

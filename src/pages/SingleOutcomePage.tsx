@@ -96,7 +96,7 @@ snapshot.docs.forEach((doc)=>{
 
       <link
         rel="canonical"
-        href={`https://ahsanraza.site/outcome/${slug}`}
+        href={`https://www.ahsanraza.site/outcome/${slug}`}
       />
     </Helmet>
     <Navbar />

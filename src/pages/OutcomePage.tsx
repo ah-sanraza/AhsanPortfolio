@@ -89,7 +89,7 @@ export default function OutcomePage() {
 
   <link
     rel="canonical"
-    href="https://ahsanraza.site/outcomes"
+    href="https://www.ahsanraza.site/outcomes"
   />
 </Helmet> <Navbar/>
     <section id="execution" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/25 relative">
