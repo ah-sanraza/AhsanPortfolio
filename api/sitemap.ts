@@ -21,9 +21,13 @@ export default async function handler(req: any, res: any) {
   try {
     const db = getDB();
 
-    const analysesSnapshot = await db.collection("analyses").get();
+    // Get both collections
+    const [analysesSnapshot, outcomesSnapshot] = await Promise.all([
+      db.collection("analyses").get(),
+      db.collection("outcomes").get(),
+    ]);
 
-    const urls = [
+    const urls: string[] = [
       `
       <url>
         <loc>${SITE_URL}/</loc>
@@ -47,6 +51,10 @@ export default async function handler(req: any, res: any) {
       `,
     ];
 
+    // =========================
+    // ANALYSIS URLs
+    // =========================
+
     analysesSnapshot.forEach((doc) => {
       const data = doc.data();
 
@@ -63,18 +71,44 @@ export default async function handler(req: any, res: any) {
       `);
     });
 
+    // =========================
+    // OUTCOME URLs
+    // =========================
+
+    outcomesSnapshot.forEach((doc) => {
+      const data = doc.data();
+
+      if (!data.slug) return;
+
+      const slug = encodeURIComponent(data.slug);
+
+      urls.push(`
+        <url>
+          <loc>${SITE_URL}/outcome/${slug}</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+      `);
+    });
+
+    // =========================
+    // FINAL SITEMAP
+    // =========================
+
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.join("")}
 </urlset>`;
 
     res.setHeader("Content-Type", "application/xml");
+
     res.setHeader(
       "Cache-Control",
       "public, s-maxage=3600, stale-while-revalidate=86400"
     );
 
     return res.status(200).send(sitemap);
+
   } catch (error) {
     console.error("Sitemap error:", error);
 
