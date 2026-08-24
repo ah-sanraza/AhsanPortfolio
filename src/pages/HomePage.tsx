@@ -870,7 +870,7 @@ const About= () => (
         
         <div className="space-y-8">
           <h3 className="text-1xl md:text-2xl text-white tracking-[-0.03em]">
-            "Independent Technical Analyst"
+            "Independent Technical Analyst "
           </h3>
           
           <div className="w-full h-px bg-accent" />
