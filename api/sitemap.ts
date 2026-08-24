@@ -24,7 +24,7 @@ export default async function handler(req: any, res: any) {
     // Get both collections
     const [analysesSnapshot, outcomesSnapshot] = await Promise.all([
       db.collection("analyses").get(),
-      db.collection("outcomes").get(),
+      db.collection("outcome").get(),
     ]);
 
     const urls: string[] = [
