@@ -6,9 +6,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   return(
   <nav className="fixed top-0 left-0 right-0 z-[60] border-b border-white/[0.03] bg-bg/95 backdrop-blur-md">
-    <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div className="flex items-center gap-4">
-         {/* Mobile Toggle Button */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between min-w-0">
+       {/* Mobile Toggle Button */}
     <div className="flex items-center gap-4">
 
   <div className="relative">
@@ -16,17 +15,19 @@ const Navbar = () => {
 
   <button
     onClick={() => setOpen(!open)}
+    aria-label={open ? "Close navigation menu" : "Open navigation menu"}
     className="md:hidden text-white"
   >
     {open ? <X size={20} /> : <Menu size={20} />}
   </button>
 
 </div>
+      <div className="flex items-center gap-4">
         <div className="relative">
         </div>
       </div>
       <div className="hidden md:flex items-center gap-12 text-[9px] uppercase tracking-[0.25em] font-black text-text-s/70">
-        <Link to="/" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+         <Link to="/" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Overview
         </Link>
         <Link to="/analyses" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
@@ -35,12 +36,15 @@ const Navbar = () => {
         <Link to="/outcomes" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Outcomes
         </Link>
-        <HashLink smooth to="/#insights" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+                <Link to="/methodology" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+          Methodology
+        </Link>
+        {/* <HashLink smooth to="/#insights" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Insights
         </HashLink>
         <HashLink smooth to="/#researchphilosophy" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
          Philosophy 
-        </HashLink>
+        </HashLink> */}
          <HashLink smooth to="/#about" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
          Profile 
         </HashLink>
@@ -48,12 +52,11 @@ const Navbar = () => {
   {open && (
   <div className="md:hidden absolute top-16 left-0 w-full bg-bg border-t border-white/10 flex flex-col items-start px-6 py-6 gap-6 z-50">
     
-   {[
+{[
   { path: "/", label: "Overview", type: "page" },
   { path: "/analyses", label: "Market Research", type: "page" },
   { path: "/outcomes", label: "Outcomes", type: "page" },
-  { path: "/#insights", label: "Insights", type: "hash" },
-  { path: "/#researchphilosophy", label: "Philosophy", type: "hash" },
+  { path: "/methodology", label: "Methodology", type: "page" },
   { path: "/#about", label: "Profile", type: "hash" },
 ].map((item)=>(
   
@@ -96,4 +99,5 @@ const Navbar = () => {
     </div>
   </nav>
 )};
+
 export default Navbar;

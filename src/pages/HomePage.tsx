@@ -28,7 +28,6 @@ import {
   Binary } from 'lucide-react';
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { INSIGHTS } from './data';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -64,12 +63,15 @@ const Navbar = () => {
         <Link to="/outcomes" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Outcomes
         </Link>
-        <HashLink smooth to="/#insights" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+                <Link to="/methodology" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
+          Methodology
+        </Link>
+        {/* <HashLink smooth to="/#insights" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
           Insights
         </HashLink>
         <HashLink smooth to="/#researchphilosophy" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
          Philosophy 
-        </HashLink>
+        </HashLink> */}
          <HashLink smooth to="/#about" className="hover:text-accent transition-all duration-300 flex items-center gap-2 group">
          Profile 
         </HashLink>
@@ -81,8 +83,7 @@ const Navbar = () => {
   { path: "/", label: "Overview", type: "page" },
   { path: "/analyses", label: "Market Research", type: "page" },
   { path: "/outcomes", label: "Outcomes", type: "page" },
-  { path: "/#insights", label: "Insights", type: "hash" },
-  { path: "/#researchphilosophy", label: "Philosophy", type: "hash" },
+  { path: "/methodology", label: "Methodology", type: "page" },
   { path: "/#about", label: "Profile", type: "hash" },
 ].map((item)=>(
   
@@ -265,7 +266,7 @@ const SpecializationBar = () => {
     {/* header */}
     <div className="flex items-center justify-between mb-10 relative z-10">
       <span className="text-[11px] md:text-[12px] uppercase font-semibold tracking-[0.5em] text-white">
-        Analytical Performance
+        Research Record
       </span>
     </div>
 
@@ -342,11 +343,9 @@ const SpecializationBar = () => {
       </div>
     </div>
  <p className="text-xs uppercase tracking-[0.2em] text-white/80 pt-13">
-          Historical Performance Archive
+          Research Archive
         </p>
-       <p className="text-text-s/60 italic pt-2">
-  complete analytical history, validated outcomes, and archived market frameworks.
-</p>
+       <p className="text-text-s/60 italic pt-2">A public record of published market research and subsequent outcomes.</p>
      <div className="flex flex-col gap-3 pt-3">
   <a 
     href="/outcomes"
@@ -451,7 +450,7 @@ return (
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-accent" />
-            <span className="text-text-s text-[12px] uppercase tracking-[0.1em] text-white">Structured Observation. Defined Bias. Measured Outcome</span>
+            <span className="text-text-s text-[12px] uppercase tracking-[0.1em] text-white">Structured Observation. Defined Thesis. Documented Outcome.</span>
           </div>
         </div>
       </div>
@@ -564,7 +563,7 @@ return (
       ))}
     </div>
       <p className="text-xs uppercase tracking-[0.2em] text-white/80 pt-10">
-          Historical Research Archive
+          Published Research
         </p>
         <div className="flex flex-col sm:flex-row gap-10 pt-3">
         <a 
@@ -659,7 +658,7 @@ return true;
           <h2 className="text-4xl sm:text-5xl font-serif font-bold italic mb-6 tracking-tight text-white">Outcome Validation</h2>
           <div className="flex items-center gap-4">
             <div className="w-2 h-2 bg-accent" />
-            <span className="text-text-s text-[12px] uppercase tracking-[0.1em] text-white">post publication validation of market behavior against the original research.</span>
+            <span className="text-text-s text-[12px] uppercase tracking-[0.1em] text-white">Post-publication assessment of market behaviour against the original research.</span>
           </div>
         </div>
         
@@ -785,7 +784,7 @@ return true;
         </p>
         <div className="flex flex-col sm:flex-row gap-10 pt-3">
         <a 
-          href="https://x.com/ah_sanraza" 
+          href="/outcomes"
           className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
         >
           <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
@@ -799,61 +798,38 @@ return true;
   );
 };
 
-const InsightsSection = () => (
-  <section id="insights" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/25 relative overflow-hidden">
-    <div className="absolute top-0 left-0 w-full h-full bg-data-blue/[0.01] pointer-events-none" />
-    <div className="mb-22">
-      <h2 className="text-5xl font-serif font-bold italic mb-4 tracking-tight text-white">Analytical Principles</h2>
-     
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-accent" />
-           <span className="text-text-s text-[12px] uppercase tracking-[0.1em] text-white">core principles behind analytical consistency</span>
-        </div>
-        <div className="h-px w-10 bg-accent/20" />
-  </div>
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-      {INSIGHTS.map((insight, i) => (
-       <div key={i} className="terminal-panel p-12 border-2 border-white/[0.12] hover:border-accent/60 transition-all duration-500 flex flex-col justify-between h-full group bg-gradient-to-b from-panel/30 to-bg/10">
-          <div>
-            <div className="flex justify-between items-center mb-10">
-              <div className="px-3 py-1 border border-white/10 text-[8px] font-mono text-accent uppercase tracking-widest bg-white/[0.02]">
-                Principles_0{i + 1}
-              </div>
-              
-            </div>
-            <h3 className="text-3xl font-serif font-bold mb-8 italic text-white group-hover:text-accent transition-colors duration-500 leading-snug">{insight.title}</h3>
-            <p className="text-text-s text-base leading-relaxed font-serif tracking-wide">{insight.text}</p>
-          </div>
-          <div className="mt-12 pt-6 border-t border-white/[0.04] flex items-center justify-between">
-             {/* <span className="text-[7px] font-mono text-white/20 uppercase tracking-[.3em]">Integrity: High</span>
-             <History size={12} className="text-white/10 group-hover:text-accent/40 transition-colors" /> */}
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-);
-
 const ResearchPhilosophy = () => (
   <section id="researchphilosophy" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/25 relative">
     <div className="grid lg:grid-cols-12 gap-24 items-end">
       <div className="lg:col-span-12">
         <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-5xl font-serif font-bold italic mb-3 tracking-tight text-white">Research Philosophy</h2>
+            <h2 className="text-5xl font-serif font-bold italic mb-3 tracking-tight text-white">Methodology</h2>
         </div>
         
         <div className="space-y-8">
           <h3 className="text-1xl md:text-2xl text-white tracking-[-0.03em]">
-            "A consistent process and structured observation keep emotional bias out of the equation"
+            "A structured process from thesis to outcome."
           </h3>
           
-          <div className="w-45 h-px bg-accent" />
-          <div className="flex items-center gap-4 mb-6">
+          <div className="" />
+          {/* <div className="flex items-center gap-4 mb-6">
             <h2 className="text-3xl font-serif font-bold italic tracking-wide text-white">Methodology</h2>
-        </div>
-          <p className="text-text-s text-lg md:text-xl font-sans font-medium max-w-none leading-relaxed tracking-[-0.03em]">
-            “The approach is centered on tracking how liquidity is positioned and how price interacts with it. Analysis is built around structure, displacement and inefficiencies where the market moves away from balance. No reliance is placed on indicators. The process is based on reading price behavior and confirming shifts in underlying flow.”
+        </div> */}
+          <p className="text-text-s text-lg md:text-xl font-sans font-medium max-w-none leading-relaxed tracking-[-0.02em]">
+            “Research is documented before the outcome, evaluated against predefined conditions, and maintained as part of the public research record.”
           </p>
+        <div className="flex flex-col sm:flex-row gap-10 pt-3">
+        <a 
+          href="/methodology"
+          className="group relative px-8 py-4 bg-panel border border-white/10 hover:border-accent/60 transition-all duration-500 overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+          <div className="flex items-center gap-2 relative z-10">
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">Explore Methodology</span>
+            <ArrowRight size={14} className="text-accent group-hover:translate-x-2 transition-transform duration-500" />
+          </div>
+        </a>
+      </div>
         </div>
       </div>
     </div>
@@ -876,18 +852,14 @@ const About= () => (
           <div className="w-full h-px bg-accent" />
           
           <p className="text-text-s text-lg md:text-l font-sans font-medium max-w-3xl leading-relaxed tracking-[-0.02em]">
-            I analyze markets through supply and demand dynamics with emphasis on structural price behavior at key areas of interest.
-Market structure is used to define directional context and identify potential transitions in trend conditions.
-Price action and candlestick behavior are interpreted to assess real-time market intent, with chart patterns serving as structural confirmation.
-Time is treated as a continuous variable across intraday and multi-day phases, reflecting shifts in liquidity and volatility conditions.
-The methodology prioritizes raw price behavior and structural context over lagging technical indicators to maintain a context-driven analytical framework.
+            I study financial markets through price behaviour, market structure, liquidity, and broader market context. My work focuses on developing a clear market thesis, documenting it before the outcome, and maintaining a public record of how price subsequently behaved.Research spans Crypto, Forex, Commodities, and selected Equities, with each study documented according to the conditions and timeframe relevant to the market being examined.
           </p>
           
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-5 ">
              {[
-               { label: "Edge", value: "Context-driven analysis without indicator dependency" },
-               { label: "Approach", value: "Liquidity driven technical framework" },
-               { label: "Focus", value: "Structure and Price behavior" },
+               { label: "Focus", value: "Liquidity & Market Structurec" },
+               { label: "Framework", value: "Multi-Factor Technical Research" },
+               { label: "Record", value: "Documented Thesis & Outcome" },
               //  { label: "Dependency", value: "Zero Indicator " }
              ].map((node, i) => (
                <div key={i} className="group">
@@ -905,14 +877,14 @@ The methodology prioritizes raw price behavior and structural context over laggi
              
              <div className="flex items-center gap-4 mb-12 relative z-10">
                
-               <span className="text-[14px] uppercase font-black tracking-[0.4em] text-white/90">Specializations</span>
+               <span className="text-[14px] uppercase font-black tracking-[0.2em] text-white/90">Specializations</span>
              </div>
              
              <div className="space-y-5 relative z-10">
                {[
-                 { value: " Technical Analysis", color: "text-accent" },
-                 {  value: "Market Flow Analysis", color: "text-accent" },
-                 {  value: "Liquidity Mapping", color: "text-accent" }
+                 { value: "Supply & Demand", color: "text-accent" },
+                 {  value: "Structural & Pattern Analysis", color: "text-accent" },
+                 {  value: "Liquidity & Market Flow", color: "text-accent" }
                ].map((metric, i) => (
                  <div key={i} className="flex justify-between items-end border-b border-white/[0.05] pb-6 group/item">
                     
@@ -991,7 +963,6 @@ export default function App() {
         <SpecializationBar />
         <MarketGrid />
         <ExecutionLog />
-        <InsightsSection />       
         <ResearchPhilosophy />
         <About />
         <Contact />

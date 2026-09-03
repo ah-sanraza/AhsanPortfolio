@@ -49,6 +49,13 @@ export default async function handler(req: any, res: any) {
         <priority>0.9</priority>
       </url>
       `,
+      `
+      <url>
+        <loc>${SITE_URL}/methodology</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+      </url>
+      `,
     ];
 
     // =========================

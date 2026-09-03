@@ -97,15 +97,15 @@ export default function OutcomePage() {
 
       <div className="flex flex-col lg:flex-row items-baseline justify-between mb-24 gap-12">
         <div>
-          <h2 className="text-5xl font-serif font-bold italic mb-6 tracking-tight text-white">Outcome Validation</h2>
-          <div className="flex items-center gap-4">
+          <h2 className="text-4xl sm:text-5xl font-serif font-bold italic mb-6 tracking-tight text-white">Outcome Validation</h2>
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <div className="w-2 h-2 bg-accent" />
-            <span className="text-text-s text-[12px] uppercase tracking-[0.1em] text-white">post publication validation of market behavior against the original research.</span>
+            <span className="text-text-s text-[10px] sm:text-[12px] uppercase tracking-[0.08em] sm:tracking-[0.1em] text-white leading-relaxed">post publication validation of market behavior against the original research.</span>
           </div>
         </div>
         
-        <div className="flex flex-wrap gap-1 p-1 bg-white/[0.07] border border-white/[0.2] rounded-sm">
-           <div className="flex items-center gap-4 px-6 py-3 border-r border-white/5">
+        <div className="flex flex-col sm:flex-row w-full lg:w-auto gap-1 p-1 bg-white/[0.07] border border-white/[0.2] rounded-sm">
+           <div className="flex items-center gap-3 px-3 sm:px-6 py-3 border-b sm:border-b-0 sm:border-r border-white/5">
              <Filter size={12} className="text-accent" />
              <select 
                className="bg-transparent text-[10px] uppercase tracking-[0.2em] text-white outline-none cursor-pointer text-text-s hover:text-accent transition-colors"
@@ -119,7 +119,7 @@ export default function OutcomePage() {
              </select>
            </div>
            
-           <div className="flex items-center gap-4 px-6 py-3">
+           <div className="flex items-center gap-3 px-3 sm:px-6 py-3">
               <Filter size={12} className="text-accent" />
               <select 
                className="bg-transparent text-[10px] uppercase tracking-[0.2em] text-white outline-none cursor-pointer text-text-s hover:text-accent transition-colors"
@@ -145,7 +145,7 @@ export default function OutcomePage() {
             <div className="xl:col-span-12 grid grid-cols-1 md:grid-cols-2 relative group-images">
               <div className="relative overflow-hidden aspect-video xl:aspect-auto border-2 border-black">
                 <div className="absolute inset-0 bg-accent/[0.03] z-10 pointer-events-none" />
-                <div className="absolute top-6 left-6 z-20">
+                <div className="absolute top-3 left-3 sm:top-6 sm:left-6 z-20">
                   <span className="px-3 py-1 bg-black/60 border border-white/5 text-[10px] font-mono text-white/80 uppercase tracking-widest">Initial Thesis [Market Structure]</span>
                 </div>
                 <a href={Analysis.beforeImage} target="_blank" rel="noopener noreferrer">
@@ -153,7 +153,7 @@ export default function OutcomePage() {
                 </a>
               </div>
               <div className="relative overflow-hidden aspect-video xl:aspect-auto border-2 border-black">
-                <div className="absolute top-6 right-6 z-20">
+                <div className="absolute top-3 right-3 sm:top-6 sm:right-6 z-20">
                   <div className={`px-5 py-2 text-[9px] font-black uppercase tracking-[0.2em] shadow-2xl border ${
                     Analysis.result === 'VALIDATED' ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400' : 
                     Analysis.result === 'INVALIDATED' ? 'bg-red-500/10 border-red-500/50 text-red-400' : 'bg-white/10 border-white/20 text-white'
@@ -161,7 +161,7 @@ export default function OutcomePage() {
                     Result: {Analysis.result}
                   </div>
                 </div>
-                <div className="absolute top-6 left-6 z-20">
+                <div className="absolute top-3 left-3 sm:top-6 sm:left-6 z-20">
                   <span className="px-3 py-1 bg-black/60 border border-white/5 text-[10px] font-mono text-white/80 uppercase tracking-widest">Outcome  [market response]</span>
                 </div>
                 <a href={Analysis.afterImage} target="_blank" rel="noopener noreferrer">
@@ -169,19 +169,19 @@ export default function OutcomePage() {
               </a>
               </div>
             </div>
-            <div className="xl:col-span-12 p-10 flex flex-col justify-between border-t xl:border-t-0 xl:border-l border-white/[0.05] bg-gradient-to-br from-panel/40 to-transparent">
+            <div className="xl:col-span-12 p-5 sm:p-8 lg:p-10 flex flex-col justify-between border-t xl:border-t-0 xl:border-l border-white/[0.05] bg-gradient-to-br from-panel/40 to-transparent">
               <div>
                 <div className="flex items-center justify-between mb-5">
                   <div>
                     {/* <div className="text-[7px] font-mono text-white/30 uppercase tracking-[.4em] mb-1">{Analysis.id}</div> */}
-                    <h3 className="text-4xl font-serif font-bold tracking-tight mb-2 text-white">{Analysis.pair}{Analysis.date && (
+                    <h3 className="text-3xl sm:text-4xl font-serif font-bold tracking-tight mb-2 text-white">{Analysis.pair}{Analysis.date && (
           <>
   <span className="text-[18px] font-mono text-text uppercase tracking-widest">
         {Analysis.tf}
       </span>
     </>
   )}</h3>
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                       <span className="text-[12px] font-black">
                        {Analysis.datepub}
                       </span>
@@ -191,7 +191,7 @@ export default function OutcomePage() {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-4 gap-10 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 mb-12">
                   <div className="space-y-3">
                     <div className="text-[9px] uppercase tracking-[0.2em] text-text-s font-black">Initial Thesis</div>
                     <div className="text-1xl text-white leading-[1.2] tracking-tight">{Analysis.initialForecast}</div>
