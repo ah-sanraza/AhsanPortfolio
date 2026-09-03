@@ -149,7 +149,7 @@ export default function OutcomePage() {
                   <span className="px-3 py-1 bg-black/60 border border-white/5 text-[10px] font-mono text-white/80 uppercase tracking-widest">Initial Thesis [Market Structure]</span>
                 </div>
                 <a href={Analysis.beforeImage} target="_blank" rel="noopener noreferrer">
-                  <img src={Analysis.beforeImage} alt={`Market Structure`} className="object-cover w-full h-full transition-all duration-1000" referrerPolicy="no-referrer"/>
+                  <img src={Analysis.beforeImage} alt={`Market Structure`} loading="lazy" decoding="async" className="object-cover w-full h-full transition-all duration-1000" referrerPolicy="no-referrer"/>
                 </a>
               </div>
               <div className="relative overflow-hidden aspect-video xl:aspect-auto border-2 border-black">
@@ -165,7 +165,7 @@ export default function OutcomePage() {
                   <span className="px-3 py-1 bg-black/60 border border-white/5 text-[10px] font-mono text-white/80 uppercase tracking-widest">Outcome  [market response]</span>
                 </div>
                 <a href={Analysis.afterImage} target="_blank" rel="noopener noreferrer">
-                <img src={Analysis.afterImage} alt={`Market Response`} className="object-cover w-full h-full transition-all duration-1000" referrerPolicy="no-referrer" />
+                <img src={Analysis.afterImage} alt={`Market Response`}   loading="lazy" decoding="async" className="object-cover w-full h-full transition-all duration-1000" referrerPolicy="no-referrer" />
               </a>
               </div>
             </div>
