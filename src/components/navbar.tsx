@@ -90,7 +90,7 @@ const Navbar = () => {
       behavior: "smooth",
     });
   }}
-        href="#contact" 
+        href="/#contact" 
         className="text-[9px] uppercase tracking-[0.3em] font-black text-accent bg-accent/5 border border-accent/30 px-6 py-2.5 hover:bg-accent hover:text-bg transition-all duration-500 relative group overflow-hidden"
       >
         <span className="relative z-10">Connect</span>
