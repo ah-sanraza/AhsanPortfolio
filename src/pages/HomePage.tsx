@@ -836,68 +836,80 @@ const ResearchPhilosophy = () => (
   </section>
 );
 
-const About= () => (
-  <section id="about" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/25 relative">
-    <div className="grid lg:grid-cols-12 gap-24 items-end">
-      <div className="lg:col-span-8">
+
+const About = () => (
+  <section
+    id="about"
+    className="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto border-t border-white/25 relative"
+  >
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24 items-center">
+
+      {/* IMAGE: Mobile par first, desktop par right */}
+      <div className="order-1 lg:order-2 lg:col-span-4 w-full min-w-0">
+        <div className="terminal-panel p-4 sm:p-8 lg:p-6 w-full bg-panel/60 backdrop-blur-xl border border-accent/20 relative group overflow-hidden rounded-2xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.03] to-transparent pointer-events-none" />
+
+          <div className="relative z-10">
+            <img
+              src="/image/CEO_image.jpg"
+              alt="Ahsan Raza"
+              className="block w-full h-auto max-h-[500px] object-cover object-top rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* CONTENT: Mobile par image ke neeche, desktop par left */}
+      <div className="order-2 lg:order-1 lg:col-span-8 min-w-0">
+
         <div className="flex items-center gap-4 mb-3">
-            <h2 className="text-5xl font-serif font-bold mb-6 tracking-tight text-white">Ahsan Raza</h2>
+          <h2 className="text-4xl sm:text-5xl font-serif font-bold mb-3 tracking-tight text-white">
+            Ahsan Raza
+          </h2>
         </div>
-        
-        <div className="space-y-8">
-          <h3 className="text-1xl md:text-2xl text-white tracking-[-0.03em]">
-            "Independent Technical Analyst "
+
+        <div className="space-y-6 sm:space-y-8">
+
+          <h3 className="text-xl sm:text-2xl text-white tracking-tight">
+            Independent Technical Analyst
           </h3>
-          
+
           <div className="w-full h-px bg-accent" />
-          
-          <p className="text-text-s text-lg md:text-l font-sans font-medium max-w-3xl leading-relaxed tracking-[-0.02em]">
-            I study financial markets through price behaviour, market structure, liquidity, and broader market context. My work focuses on developing a clear market thesis, documenting it before the outcome, and maintaining a public record of how price subsequently behaved.Research spans Crypto, Forex, Commodities, and selected Equities, with each study documented according to the conditions and timeframe relevant to the market being examined.
+
+          <p className="text-text-s text-base sm:text-lg font-sans font-medium max-w-3xl leading-relaxed tracking-tight">
+            I study financial markets through price behaviour, market
+            structure, liquidity, and broader market context. My work focuses
+            on developing a clear market thesis, documenting it before the
+            outcome, and maintaining a public record of how price subsequently
+            behaved. Research spans Crypto, Forex, Commodities, and selected
+            Equities, with each study documented according to the conditions
+            and timeframe relevant to the market being examined.
           </p>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-5 ">
-             {[
-               { label: "Focus", value: "Liquidity & Market Structurec" },
-               { label: "Framework", value: "Multi-Factor Technical Research" },
-               { label: "Record", value: "Documented Thesis & Outcome" },
-              //  { label: "Dependency", value: "Zero Indicator " }
-             ].map((node, i) => (
-               <div key={i} className="group">
-                 <div className="text-[11px] uppercase font-black tracking-[0.3em] text-accent mb-4 group-hover:text-accent transition-colors">{node.label}</div>
-                 <div className="font-serif text-lg text-white border-l border-white pl-4 group-hover:border-accent transition-all duration-500">{node.value}</div>
-               </div>
-             ))}
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 sm:gap-6 pt-3">
+            {[
+              { label: "Focus", value: "Liquidity & Market Structure" },
+              { label: "Framework", value: "Multi-Factor Technical Research" },
+              { label: "Record", value: "Documented Thesis & Outcome" },
+            ].map((node, i) => (
+              <div key={i} className="group min-w-0">
+                <div className="text-[10px] sm:text-[11px] uppercase font-black tracking-[0.2em] sm:tracking-[0.3em] text-accent mb-3">
+                  {node.label}
+                </div>
+                <div className="font-serif text-base sm:text-lg text-white border-l border-white pl-3 sm:pl-4 group-hover:border-accent transition-all duration-500 break-words">
+                  {node.value}
+                </div>
+              </div>
+            ))}
           </div>
+
         </div>
       </div>
-      
-      <div className="lg:col-span-4 self-stretch flex items-center justify-center">
-          <div className="terminal-panel p-12 w-full bg-panel/60 backdrop-blur-xl border-accent/20 relative group overflow-hidden">
-             <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.03] to-transparent pointer-events-none" />
-             
-             <div className="flex items-center gap-4 mb-12 relative z-10">
-               
-               <span className="text-[14px] uppercase font-black tracking-[0.2em] text-white/90">Specializations</span>
-             </div>
-             
-             <div className="space-y-5 relative z-10">
-               {[
-                 { value: "Supply & Demand", color: "text-accent" },
-                 {  value: "Structural & Pattern Analysis", color: "text-accent" },
-                 {  value: "Liquidity & Market Flow", color: "text-accent" }
-               ].map((metric, i) => (
-                 <div key={i} className="flex justify-between items-end border-b border-white/[0.05] pb-6 group/item">
-                    
-                    <span className={` text-3xl font-bold tracking-tighter ${metric.color}`}>{metric.value}</span>
-                 </div>
-               ))}
-             </div>
-             
-          </div>
-      </div>
+
     </div>
   </section>
 );
+
 
 const Contact = () => (
   <section id="contact" className="py-24 px-6 max-w-7xl mx-auto border-t border-white/25 relative from-transparent to-bg">
