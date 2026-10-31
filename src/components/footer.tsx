@@ -7,6 +7,17 @@ const Footer = () => (
           <br />
           <span className="text-[18px] text-white/40 font-bold mt-2 block pt-7"> © 2026</span>
           <span className="text-[12px] text-white/35 font-bold mt-2 block pt-7"> Independent market research. Not investment advice</span>
+          <span className="text-[8px] text-white/75 mt-2 block pt-1">
+  Built and Managed by💚{" "}
+  <a
+    href="https://vinkahn.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-white transition-colors cursor-pointer"
+  >
+    Vinkahn Technologies
+  </a>
+</span>
         </div>
       </div>
 );
